@@ -56,7 +56,8 @@ Evidence notes: four behaviors carry graded run evidence in docs/EVALS.md. They 
 - 0.2.1: Fibonacci story points with the effort, complexity, uncertainty model.
 - 0.3.0: seven more skills (review, release, issue, summary, handoff, report, glossary), local-rules step in every skill, examples everywhere, 24-check audit.
 - 0.3.1: rich styling rules in write-better, write-docs, write-pr.
-- 0.4.0 (this release): seven new skills, write-core renamed to write-better, reader-load rules, docs/STATE.md.
+- 0.4.1: store-front polish in the README, npm description and keywords.
+- 0.4.0: seven new skills, write-core renamed to write-better, reader-load rules, docs/STATE.md.
 
 ## Published channels
 
