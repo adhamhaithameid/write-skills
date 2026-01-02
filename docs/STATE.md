@@ -63,7 +63,7 @@ Evidence notes: four behaviors carry graded run evidence in docs/EVALS.md. They 
 
 - GitHub: github.com/adhamhaithameid/write-skills
 - skills.sh: skills.sh/adhamhaithameid/write-skills
-- npm: write-skills (0.3.0 live at the time of writing; publish 0.4.0 after `npm login`)
+- npm: write-skills (0.3.0 live at the time of writing; publish 0.4.1 after `npm login`)
 
 ## Name check, 2026-10-29
 
@@ -74,7 +74,7 @@ skills.sh: write-tldr, write-again, help-write, write-adr, write-prd, write-ste,
 - Run the eval cases for the new skills and record verdicts in docs/EVALS.md.
 - The full before-and-after experiment is in docs/EXPERIMENT.md: 13 clear passes, 9 thin passes, 0 failures over 22 skills.
 - Keep the negative-trigger routing test green before adding a twenty-third skill.
-- npm publish 0.4.0 (user, after npm login).
+- npm publish 0.4.1 (user, after npm login).
 - Delete the old private repo github.com/adhamhaithameid/writing-skills (user).
 
 ## Held for later
