@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/write-skills.svg)](https://www.npmjs.com/package/write-skills)
 [![ci](https://github.com/adhamhaithameid/write-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/adhamhaithameid/write-skills/actions/workflows/ci.yml)
-[![license mit](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![license MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Twenty-two agent skills that fix how agents write. Each skill works alone. Install one skill or all of them.
 
