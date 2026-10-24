@@ -1,0 +1,25 @@
+{
+  "style_skill": null,
+  "lint_paths": [
+    "README.md",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+    "docs/BLOCKS.md",
+    "docs/EVALS.md",
+    "shared/ste.md",
+    "skills/write-core/SKILL.md",
+    "skills/write-core/references/ai-patterns.md",
+    "skills/write-core/references/profile.md",
+    "skills/write-compact/SKILL.md",
+    "skills/write-docs/SKILL.md",
+    "skills/write-docs/references/docs-standard.md",
+    "skills/write-docs/references/agent-docs.md",
+    "skills/write-pr/SKILL.md",
+    "skills/write-commit/SKILL.md",
+    "skills/write-comments/SKILL.md",
+    "skills/write-jira/SKILL.md",
+    "skills/write-longform/SKILL.md"
+  ],
+  "max_lines": {},
+  "default_max_lines": 500
+}

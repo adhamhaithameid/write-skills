@@ -1,0 +1,26 @@
+{
+  "name": "write-skills",
+  "version": "0.1.0",
+  "description": "Eight agent skills for writing. Each skill works alone.",
+  "license": "MIT",
+  "author": "adhamhaithameid",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adhamhaithameid/write-skills.git"
+  },
+  "keywords": [
+    "agent",
+    "skills",
+    "claude",
+    "writing",
+    "simplified-technical-english"
+  ],
+  "files": [
+    "skills/",
+    "shared/",
+    "docs/",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "skill_name": "write-jira",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Break this plan into a Jira epic with stories and story points. Plan: users want to attach files to tasks. The backend needs an attachment table and upload endpoint, the web app needs an attach button and preview, and the mobile app needs the same. Each surface should ship on its own.",
+      "expected_output": "One epic named for the outcome, plus stories that each cut a complete vertical path: data, endpoint, one client surface, tests. Each story has a testable acceptance checklist, a blocked-by line, and story points with a one-line reason built from size, risk, and unknowns.",
+      "assertions": [
+        "Epic title states the outcome, not a feature word",
+        "Each story is a vertical slice, not a layer",
+        "Acceptance criteria are testable checkboxes",
+        "Blocked-by lines present",
+        "Every points value carries a reason line",
+        "No bare points number"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Break this into Jira stories. Plan: rename the column users.email to users.login across the whole codebase. The rename touches every service that reads the column, and no vertical slice can land green on its own.",
+      "expected_output": "A sequenced chain instead of vertical slices: add the new column beside the old, migrate readers in batches, then delete the old column. Each story names the stories that block it, and the delete story is blocked by every migration batch.",
+      "assertions": [
+        "First story adds the new form beside the old",
+        "Middle stories migrate callers in batches",
+        "Final story deletes the old form",
+        "Blocking edges form a correct chain",
+        "No forced vertical slice"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Break this into Jira stories. Plan: make the dashboard faster. That is all the input you get.",
+      "expected_output": "The skill does not invent a breakdown from nothing. It asks for the missing facts, or lists the unknowns explicitly, before or instead of producing stories. Any stories it does draft carry the unknowns in the story text, and points come with a reason that names the unknowns.",
+      "assertions": [
+        "Asks for missing context or lists the unknowns",
+        "Does not fabricate measurements or causes",
+        "Stories, if drafted, carry the unknowns",
+        "Points reasons mention the unknowns"
+      ],
+      "files": []
+    }
+  ]
+}

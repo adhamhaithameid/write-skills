@@ -1,0 +1,61 @@
+# Blocklist for tools/check.py. One entry per line: kind: value
+# plain:    blocked text, case-insensitive. Personal data and project data.
+# regex:    blocked pattern. Emails ending in users.noreply.github.com are allowed.
+# legacy:   old skill names. Blocked as plain words. Not scanned in THIRD_PARTY_NOTICES.md.
+# skillref: names of skills that do not exist here. Blocked only in reference form.
+# Add your own names and project names under "plain" before you publish.
+
+plain: gmail.com
+plain: classroom-quick-downloader
+plain: quick-downloader
+plain: cqd
+plain: survey-fixes
+plain: academic-advisor
+plain: onemark
+plain: mac-suite
+plain: personal-knowledge-base
+plain: /Users/
+plain: /home/claude
+plain: C:\Users
+
+regex: [A-Za-z0-9._%+-]+@(?!example\.com)[A-Za-z0-9.-]+\.[A-Za-z]{2,}
+regex: (?i)\badham\b
+regex: (?i)\bhaitham\b
+
+legacy: caveman
+legacy: unslop
+legacy: ultracave
+legacy: megacave
+legacy: wenyan
+legacy: writing-for-agents
+legacy: writing-beats
+legacy: writing-fragments
+legacy: writing-shape
+legacy: writing-style-slider
+legacy: hungarian-humanizer
+legacy: technical-writing
+legacy: adaptive-communication
+legacy: copy-editing
+legacy: copywriting
+
+skillref: compress
+skillref: edit-article
+skillref: emails
+skillref: cold-email
+skillref: cro
+skillref: popups
+skillref: ab-testing
+skillref: marketing-psychology
+skillref: seo-audit
+skillref: ai-seo
+skillref: changelog-generator
+skillref: wait-what
+skillref: ask-matt
+skillref: ponytail
+skillref: poteto-mode
+skillref: poteto-help
+skillref: bro
+skillref: to-tickets
+skillref: to-issues
+skillref: cavecrew
+skillref: pr

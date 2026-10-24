@@ -1,0 +1,3 @@
+#!/bin/sh
+# Enable with: git config core.hooksPath .githooks
+python3 tools/check.py && python3 -m unittest discover -s tests -q

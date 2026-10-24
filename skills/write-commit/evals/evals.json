@@ -1,0 +1,46 @@
+{
+  "skill_name": "write-commit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a commit message for this staged diff. Repo history (git log --oneline): 'fix(auth): reject expired tokens', 'feat(api): add GET /orders/:id', 'fix(api): guard against empty query'. Diff: in src/auth/session.ts, change `if (issuedAt <= expiry)` to `if (issuedAt < expiry)`, and update the test to cover the boundary.",
+      "expected_output": "A Conventional Commits subject matching the repo style: type fix, scope auth, imperative verb, 72 characters or fewer, no trailing period. The subject alone carries it: a body is skipped because the subject plus diff say it all. Output is one paste-ready code block, and nothing else.",
+      "assertions": [
+        "Subject starts with fix(auth):",
+        "Subject uses the imperative mood",
+        "Subject is 72 characters or fewer with no trailing period",
+        "No body for a self-explanatory change",
+        "No first person and no file narration",
+        "Output is a single code block"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Write a commit message. Diff: renames the endpoint /v1/orders to /v1/checkout across the API gateway and client SDK. Old route returns 410 after 2026-06-01. Ticket 890 tracks the migration. Repo uses Conventional Commits.",
+      "expected_output": "A breaking-change commit: feat! or fix! subject with the rename, plus a body that carries the migration path and the removal date, and a Closes or Refs line for the ticket. The body is required here, wrapped at 72 characters.",
+      "assertions": [
+        "Subject marks the breaking change with !",
+        "Body present with the migration path",
+        "Body names the removal date or the 410 behavior",
+        "Ticket referenced at the end",
+        "Body wrapped near 72 characters",
+        "No body-less output"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Write a commit message. Repo history (git log --oneline): 'Session store: move to Redis', 'Login form: tighten errors', 'Build: bump deps'. The staged diff moves session storage from memory to Redis. This repo does not use Conventional Commits.",
+      "expected_output": "The message matches the repo's own convention, seen in the history: a 'Area: change' subject in that capitalization style. The skill follows the observed history over its default Conventional Commits format.",
+      "assertions": [
+        "Subject follows the observed 'Area: change' convention",
+        "Does not force Conventional Commits types",
+        "Imperative or matching history phrasing",
+        "No invented scope or type word",
+        "Subject within the repo's observed length"
+      ],
+      "files": []
+    }
+  ]
+}

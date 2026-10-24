@@ -1,0 +1,45 @@
+{
+  "skill_name": "write-pr",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write the PR title and description. Branch diff: adds rate limiting to the login endpoint, 3 files, plus a test that floods the endpoint and passes under the limit. Evidence: the flood test fails on main and passes on the branch. The change is easy to roll back.",
+      "expected_output": "An imperative title of 72 characters or fewer naming the real change. A body with the Summary, Evidence, and Risk sections. Evidence shows the before and after states. Risk names a two-way door and the blast radius around the login path.",
+      "assertions": [
+        "Title is imperative and 72 characters or fewer",
+        "Body has Summary, Evidence, and Risk sections",
+        "Evidence shows before and after",
+        "Risk names the door type and the blast radius",
+        "No evidence that was not given is claimed",
+        "Long material is linked, not pasted"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Write the PR title and description. Branch diff: splits the single transport.ts (900 lines) into transport/client.ts and transport/stream.ts with no behavior change. Call sites updated. Tests green on the branch.",
+      "expected_output": "A title for a pure refactor with no behavior change. The summary carries a small sketch of the new file layout as a shallow tree or diff sketch. Evidence cites the green test run. Risk is low: a two-way door with blast radius limited to import sites.",
+      "assertions": [
+        "Title names the refactor without overclaiming behavior change",
+        "Summary includes a file tree or diff sketch",
+        "Evidence cites the test run as given",
+        "Risk section present and honest",
+        "Sketch stays small, one view"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Write the PR title and description. Branch diff: adds a data migration that merges the two user tables into one. The tests are written but have not been run yet, and there is no screenshot or log available.",
+      "expected_output": "The skill writes the PR text without inventing evidence. The Evidence section states plainly that the tests exist but were not run. A one-way door is named for the data migration, with a warning line in the summary.",
+      "assertions": [
+        "Does not fabricate test results or logs",
+        "Evidence section states the gap explicitly",
+        "One-way door named for the migration",
+        "Warning line present in the summary",
+        "Title still states the real change"
+      ],
+      "files": []
+    }
+  ]
+}
