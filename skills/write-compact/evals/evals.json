@@ -1,0 +1,40 @@
+{
+  "skill_name": "write-compact",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Your previous reply was: 'The decorator wraps the handler so the middleware chain stays pure and the retry policy stays composable.' The user answers: 'wait, what? I don't follow.' Rebuild the explanation.",
+      "expected_output": "Explain-again mode: finds where the read broke, defines the failed terms, rebuilds with the missing context, ends with the next step. Not a shorter repetition of the same words.",
+      "assertions": [
+        "Defines the terms that failed: decorator, middleware chain",
+        "Adds the context the reader lacked",
+        "Uses plain constructions and short sentences",
+        "Ends with one next step"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "User says: 'be brief from now on'. Then asks: 'does the migration in PR 41 drop the old column, and is it reversible?'",
+      "expected_output": "Brief mode: answer first, facts exact, no ceremony, full sentences because the answer covers an irreversible action and order matters.",
+      "assertions": [
+        "Answer first",
+        "No greeting, recap, or closing line",
+        "Facts and names exact",
+        "Full sentences where order or safety matters"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Brief mode is on. The user asks for the exact error line from a log that contains: TypeError: Cannot read properties of undefined (reading 'id') at updateCart (cart.ts:88) plus 40 lines of stack.",
+      "expected_output": "One decisive error line quoted exact with file and line, no stack dump, one next step.",
+      "assertions": [
+        "Shortest decisive error line quoted exact",
+        "No stack dump",
+        "One next step"
+      ],
+      "files": []
+    }
+  ]
+}

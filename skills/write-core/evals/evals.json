@@ -1,0 +1,40 @@
+{
+  "skill_name": "write-core",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Explain to a new team member why the build failed: the CI log says 'error TS2322: Type string is not assignable to type number at src/cart.ts line 41'. They have never used TypeScript.",
+      "expected_output": "Level 1 reply: defines type checking and the error in plain words, gives the fix, one example. No jargon without expansion. Short sentences, active voice.",
+      "assertions": [
+        "Defines the terms a newcomer lacks",
+        "States the fix and the file location",
+        "Sentences short and active",
+        "No AI patterns"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Status update for the channel, level 2, depth 3: the flaky login test was fixed by waiting for the session cookie instead of a fixed sleep. Test run went from 14 failures this week to 0.",
+      "assertions": [
+        "Answer first, then reason, then next step",
+        "Exact numbers kept: 14, 0",
+        "Real symbol and command names",
+        "Report held to a few lines"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Rewrite this reply so it carries no AI patterns: 'In order to boost your productivity, this robust tool leverages cutting-edge caching to deliver a seamless experience that will help you delve into your data like never before.'",
+      "expected_output": "Every banned word and filler removed. The rewrite names what the tool does in plain words.",
+      "assertions": [
+        "No banned vocabulary remains",
+        "No 'in order to', no 'leverage', no 'seamless'",
+        "Names a mechanism or number",
+        "Meaning kept"
+      ],
+      "files": []
+    }
+  ]
+}

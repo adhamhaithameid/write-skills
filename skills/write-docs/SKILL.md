@@ -41,6 +41,13 @@ Jobs stay separate. Split the page and link, rather than mixing.
 11. One thing carries one name across the whole document.
 12. Name the real symbols, paths, flags, and commands. The codebase supplies the words.
 
+## Revise an existing document
+
+1. Read the whole page once before you change a line.
+2. Settle the job of the page. Check every section against that job.
+3. Repair the sentences that break the rules. Leave the sentences that hold.
+4. Do not reword text that did not change. A rewrite of untouched text costs the reviewer time.
+
 ## Rhythm
 
 A page can pass every rule and still read like a machine wrote it.

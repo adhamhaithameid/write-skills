@@ -1,0 +1,29 @@
+{
+  "skill_name": "write-comments",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add code comments to this function. Context: byte 0 is the protocol version; version 2 is the only one the gateway still accepts; versions 0 and 1 were removed in 2025. Code: function parseHeader(buf) { const version = buf.readUInt8(0); if (version !== 2) throw new Error('unsupported'); return { version }; }",
+      "expected_output": "Comments state the constraint and the trap: only version 2 accepted, older versions removed. No comment restates the code.",
+      "assertions": [
+        "States the version 2 constraint",
+        "Names the removal fact or date",
+        "No restatement of the code",
+        "Comment sits next to the line it explains"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Review these comments and delete or fix the bad ones: '// increment i by one' above i++; '// TODO: fix this' above a date parser; '// returns the result' above a return statement; '// The API allows 10 calls per second. See ticket 812.' above a retry delay.",
+      "expected_output": "Restatements deleted. The bare TODO gets a reason or goes. The API constraint comment stays.",
+      "assertions": [
+        "Restatements removed",
+        "Bare TODO flagged or replaced with a reason",
+        "Constraint comment kept",
+        "No new narration added"
+      ],
+      "files": []
+    }
+  ]
+}

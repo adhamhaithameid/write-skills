@@ -1,0 +1,42 @@
+{
+  "skill_name": "write-docs",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Revise this README paragraph: 'Configuration of the exporter is performed via exporter.json. Note that it's important to remember that running with --reset should only be done when you want to forget all state, as data loss may occur if misused.'",
+      "expected_output": "The revision names the real actor and file, puts the condition before the action, cuts the filler, and keeps every fact. Untouched meaning stays in place.",
+      "assertions": [
+        "Real symbol and flag names kept",
+        "Warning placed before the action",
+        "Filler deleted: 'note that', 'it's important to remember'",
+        "Active voice, actor named",
+        "No facts lost"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Plan a short doc page that teaches a newcomer to run their first import with our CLI tool. Choose the document job and outline the page.",
+      "expected_output": "Tutorial job chosen: build-a-thing framing, every step shows a visible result, written as commands. No reference tables or argument sections mixed in.",
+      "assertions": [
+        "Chooses tutorial and says why",
+        "Opens with what the learner ends with",
+        "Steps produce visible results",
+        "No mixed modes"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Write the structure for an agent instruction file that a coding agent reads on every run: how to run tests, what never to commit, and where the domain glossary lives.",
+      "expected_output": "Agent mode: stable headings, steps with checkable end conditions, facts the environment does not show, one meaning in one place.",
+      "assertions": [
+        "Stable headings per topic",
+        "Steps end on checkable conditions",
+        "Points at the glossary location",
+        "No restated rules"
+      ],
+      "files": []
+    }
+  ]
+}

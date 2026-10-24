@@ -7,37 +7,27 @@ description: >
 
 # Write commit
 
-One change, one commit, one message. The message gives the intent. The diff already shows the what.
+The message gives the intent. The diff already shows the what.
 
 ## Read first
 
-1. Read the staged diff. A commit message describes the staged change, not the plan.
-2. Read the history with `git log --oneline -15`. Match the type words, the scope style, and the capitalization of the repo.
-3. Read the contribution guide when the repo has one. It wins on format.
+1. Read the staged diff. The message describes the staged change, not the plan.
+2. Read the history with `git log --oneline -15`. The history sets the format: the type words, the scope style, the capitalization, the length.
+3. Read the contribution guide when the repo has one. It wins over the history.
 
-## Subject
+The repo convention wins over any default. When the history writes "Area: change", write "Area: change". When the history writes Conventional Commits, write Conventional Commits.
 
-- Format: `type(scope): summary`. The scope part is optional.
-- Types: `feat`, `fix`, `refactor`, `perf`, `docs`, `test`, `chore`, `build`, `ci`, `style`, `revert`.
-- Imperative mood: "add", not "added" or "adds".
-- Fifty characters or fewer when possible. Seventy-two is the hard cap. No trailing period.
+## Write
 
-## Body
+- One subject line, imperative, the real change. Keep to the length the history uses.
+- Add a body only for what the diff cannot show: a why, a migration path, a linked ticket.
+- A breaking change, a security fix, a data migration, and a revert always get a body.
+- Keep file narration out. The diff lists files.
+- No tool attribution, unless a repo rule requires a trailer.
 
-Skip the body when the subject says it all. Add a body only for:
+## Output
 
-1. A why the diff cannot show.
-2. A breaking change and its migration path.
-3. A linked issue or a follow-up.
-
-Always add a body for a breaking change, a security fix, a data migration, and a revert. Future debuggers need the context. Wrap the body at 72 characters. Use dash bullets.
-
-## Never
-
-- No narration of files the diff already lists.
-- No "I", "we", "now", "this commit".
-- No tool attribution, unless a repo rule requires a trailer. Then add it as a trailer.
-- No emoji, unless the repo history uses them.
+Give one code block, ready to paste. This block writes text only. It never stages, commits, or amends.
 
 ## Example
 
@@ -49,10 +39,6 @@ passed as valid. Compare timestamps as numbers instead.
 
 Closes #412
 ```
-
-## Output
-
-Give one code block, ready to paste. This block writes text only. It never stages, commits, or amends.
 
 ## Output language
 

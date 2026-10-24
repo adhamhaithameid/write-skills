@@ -1,0 +1,28 @@
+{
+  "skill_name": "write-longform",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Start a staged mission on the topic: why our team moved from REST to gRPC. I have a notes file with fragments at notes.md.",
+      "expected_output": "Stage 0 first: a shared brief with topic, reader, sources, output path, and done condition, confirmed with the user. Then the explore interview begins. No article text yet.",
+      "assertions": [
+        "Writes the brief before any material moves",
+        "Asks for confirmation of the brief",
+        "Begins the interview or fragment mining",
+        "Produces no article prose yet"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "In exploit stage, shape mode, the article so far grounded 'streaming' and 'deadline'. The next planned block uses 'backpressure' without grounding it.",
+      "expected_output": "The skill refuses the ungrounded move: it names the gap, grounds backpressure first or moves it earlier, then continues.",
+      "assertions": [
+        "Names the ungrounded concept",
+        "Grounds it before the block leans on it",
+        "Keeps the running grounded list"
+      ],
+      "files": []
+    }
+  ]
+}

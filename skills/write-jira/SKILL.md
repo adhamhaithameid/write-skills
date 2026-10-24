@@ -15,6 +15,14 @@ Turn a plan into tickets an engineer can pick up without a meeting. Each story c
 2. Read the code area when access exists. Use the domain words of the codebase.
 3. List the slices before you write the tickets. Confirm the list with the user.
 
+## When the plan is thin
+
+A plan without a goal, a number, or a constraint is not a plan yet. Do not slice it.
+
+1. Name what is missing: the user-visible goal, the current numbers, the constraints.
+2. Ask for those facts before you draft. A story with invented targets tests nothing.
+3. When the user wants a draft anyway, mark every invented target as an assumption. Carry every unknown into the points reason.
+
 ## Slice rules
 
 1. One story is one complete path through the stack: data, API, interface, tests.
