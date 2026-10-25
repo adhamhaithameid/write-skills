@@ -77,6 +77,7 @@ def make_repo(tmp, name="alpha", body="Short text.\n", extra_skill=None):
     repo = Path(tmp)
     (repo / "shared").mkdir()
     (repo / "shared" / "ste.md").write_text("ste rules\n", encoding="utf-8")
+    (repo / "shared" / "local-rules.md").write_text("local rules\n", encoding="utf-8")
     (repo / "tools").mkdir()
     names = [name] + ([extra_skill] if extra_skill else [])
     (repo / "README.md").write_text(" ".join(names) + "\n", encoding="utf-8")
@@ -87,6 +88,7 @@ def make_repo(tmp, name="alpha", body="Short text.\n", extra_skill=None):
             f"---\nname: {n}\ndescription: Does a thing.\n---\n{body}\n## Output language\nRules.\n",
             encoding="utf-8")
         (d / "references" / "ste.md").write_text("ste rules\n", encoding="utf-8")
+        (d / "references" / "local-rules.md").write_text("local rules\n", encoding="utf-8")
     return repo
 
 

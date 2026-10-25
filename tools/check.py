@@ -227,21 +227,29 @@ def check_frontmatter(repo, fails):
             fails.append(Failure("frontmatter", y.relative_to(repo), 0, "allow_implicit_invocation must not be false"))
 
 
+SHARED_COPIES = [
+    ("shared/ste.md", "references/ste.md"),
+    ("shared/local-rules.md", "references/local-rules.md"),
+]
+
+
 def check_ste(repo, fails):
-    shared = repo / "shared" / "ste.md"
-    if not shared.exists():
-        fails.append(Failure("ste", "shared/ste.md", 0, "file is missing"))
-        return
+    for shared_rel, copy_rel in SHARED_COPIES:
+        shared = repo / shared_rel
+        if not shared.exists():
+            fails.append(Failure("ste", shared_rel, 0, "file is missing"))
+            continue
+        for d in skill_dirs(repo):
+            copy = d / copy_rel
+            if not copy.exists():
+                fails.append(Failure("ste", copy.relative_to(repo), 0, f"missing: run tools/check.py --fix-shared"))
+            elif copy.read_bytes() != shared.read_bytes():
+                fails.append(Failure("ste", copy.relative_to(repo), 0, f"differs from {shared_rel}: run tools/check.py --fix-shared"))
     for d in skill_dirs(repo):
         f = d / "SKILL.md"
         text = read_text(f) or ""
         if FOOTER_MARKER not in text:
             fails.append(Failure("ste", f.relative_to(repo), 0, f"missing '{FOOTER_MARKER}' section"))
-        copy = d / "references" / "ste.md"
-        if not copy.exists():
-            fails.append(Failure("ste", copy.relative_to(repo), 0, "missing: run tools/check.py --fix-shared"))
-        elif copy.read_bytes() != shared.read_bytes():
-            fails.append(Failure("ste", copy.relative_to(repo), 0, "differs from shared/ste.md: run tools/check.py --fix-shared"))
 
 
 def check_links(repo, fails):
@@ -434,12 +442,15 @@ def run_checks(repo):
 
 def fix_shared(repo):
     repo = Path(repo)
-    shared = repo / "shared" / "ste.md"
-    for d in skill_dirs(repo):
-        dest = d / "references" / "ste.md"
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(shared, dest)
-        print(f"synced {dest.relative_to(repo)}")
+    for shared_rel, copy_rel in SHARED_COPIES:
+        shared = repo / shared_rel
+        if not shared.exists():
+            continue
+        for d in skill_dirs(repo):
+            dest = d / copy_rel
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(shared, dest)
+            print(f"synced {dest.relative_to(repo)}")
 
 
 def main(argv):

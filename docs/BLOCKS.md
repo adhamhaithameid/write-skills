@@ -12,25 +12,36 @@ One row for each block in this set. Change this file first when the set changes.
 | write-pr | PR title and body from the change and the evidence. | Auto, on PR text. |
 | write-commit | Commit message from the staged diff and the history. | Auto, on commit text. |
 | write-comments | Code comments: intent, constraints, invariants, traps. | Auto, on comment edits. |
-| write-jira | Jira epics, stories, and story points from a plan. | Auto, on ticket text. |
+| write-review | Review comments on a diff: location, problem, fix. | Auto, on review requests. |
+| write-jira | Jira epics, stories, and story points from a plan. | Auto, on Jira text. |
+| write-issue | GitHub issues and bug reports with reproduction steps. | Auto, on issue text. |
+| write-release | Release notes from git history. | Auto, on release text. |
+| write-report | Reports for a decision-maker: answer first, evidence after. | Auto, on report requests. |
+| write-summary | Summaries that keep decisions, numbers, and owners. | Auto, on summarize requests. |
+| write-handoff | Handoff notes for a fresh session. | Auto, on handoff requests. |
 | write-longform | Staged long-form mission under one shared brief. | Explicit request only. |
+| write-glossary | Build or clean a glossary, one term per concept. | Auto, on glossary work. |
 
 ## Design rules
 
-1. Each block works alone. A block never requires another block at run time.
+1. Each block works alone. A block never requires another block at run time, and never uses a term only another block defines.
 2. A rule changes in the register first. Then it changes in every block that embeds it.
 3. Every block auto-invokes. A description states trigger conditions only. It never summarizes the workflow.
 4. Every block writes prose in Simplified Technical English and carries `references/ste.md`.
-5. Blocks that produce saved text write text only. They never run repository or tracker actions.
-6. Name collisions with public skill registers were checked before release. Check again before any publish.
+5. Every block reads local rule files first. Local rules beat skill defaults. See `shared/local-rules.md`.
+6. Blocks that produce saved text write text only. They never run repository or tracker actions.
+7. Name collisions with public skill registers were checked before release. Check again before any publish.
 
 ## Source lineage
 
-The upstream projects and their licenses are listed in `../THIRD_PARTY_NOTICES.md`.
+The upstream projects and their licenses are listed in `THIRD_PARTY_NOTICES.md`.
 
 ## Held for a later version
 
 - Marketing text modules.
 - Language modules beyond English.
 - Memory-file compression tools.
-- Release notes from git history.
+
+## Set size
+
+Fifteen descriptions load in every session. Watch trigger overlap before adding a sixteenth. The routing test in `docs/EVALS.md` is the regression net.

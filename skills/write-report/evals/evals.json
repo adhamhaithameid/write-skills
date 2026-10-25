@@ -1,0 +1,27 @@
+{
+  "skill_name": "write-report",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Report for the lead: checkout latency went from 120 ms to 480 ms after the 2.6 deploy. PR 881 moved the discount lookup into the order query. Plan count went from 1 to 14. A rollback restores the old plan.",
+      "expected_output": "Answer first with the recommended rollback, evidence with numbers and sources, confidence, next steps with owners when given.",
+      "assertions": [
+        "Answer in 3 sentences or fewer at the top",
+        "Every number has a unit",
+        "Confidence stated",
+        "No search narration"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Postmortem: at 09:15 the deploy landed, at 09:41 the first alert fired, an engineer saw it at 09:50, rollback at 10:05. Cause: the migration locked the users table.",
+      "assertions": [
+        "Timeline with times and who saw what",
+        "Cause named without blame",
+        "Prevention step present"
+      ],
+      "files": []
+    }
+  ]
+}

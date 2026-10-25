@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 - 2026-10-25
+
+- Seven new skills: write-review, write-release, write-issue, write-summary, write-handoff, write-report, write-glossary. The set is now fifteen.
+- Every skill reads local rule files first: agent instructions, contribution guides, and glossaries. A synced section and a shared reference enforce it, and local rules beat skill defaults.
+- Every skill carries a before-and-after example. A gallery lives in docs/examples.md.
+- Vocabulary fixes: no skill depends on terms only another skill defines.
+- write-core no longer claims status updates and bug reports. write-report and write-issue own them.
+
+
 ## 0.2.1 - 2026-10-24
 
 - write-jira: Fibonacci story points with the effort, complexity, and uncertainty model, and a three-point calibration.

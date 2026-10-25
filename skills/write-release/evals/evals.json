@@ -1,0 +1,28 @@
+{
+  "skill_name": "write-release",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write release notes. History v2.5..v2.6: 'fix: budget check off-by-one (#412)', 'refactor: move helpers', 'feat(api): retry on 429 (#390)', 'chore: bump deps'.",
+      "expected_output": "Grouped notes under Fixed and Added. The refactor and the chore are dropped. Issue numbers kept. One sentence per change, user-visible effect named.",
+      "assertions": [
+        "Four heads or fewer, empty heads skipped",
+        "Refactor and chore dropped",
+        "Issue numbers kept",
+        "One sentence per change"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Write release notes. History contains 'feat(db)!: rename users.email to users.login'. Migration: run scripts/migrate-login.ts once.",
+      "expected_output": "A Breaking head with the rename and the migration step in the same entry or the next line.",
+      "assertions": [
+        "Breaking head present",
+        "Migration step stated",
+        "Effect on the user named"
+      ],
+      "files": []
+    }
+  ]
+}

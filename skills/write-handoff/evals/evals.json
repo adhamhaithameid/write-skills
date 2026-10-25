@@ -1,0 +1,27 @@
+{
+  "skill_name": "write-handoff",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a handoff. This session: fixed the login test on branch fix/login-test, commit 9c31aa, tests pass, but the retry flake is untouched and the reviewer asked for a rename of the helper.",
+      "expected_output": "State first, done with proof, verified lists, open decisions, next steps with verbs, commands block, traps. Absolute date.",
+      "assertions": [
+        "Opens with repo, branch, commit state",
+        "Claims labeled verified or not",
+        "Next steps start with verbs",
+        "No relative dates"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Write a handoff. Nothing was finished: only investigation, the bug is in the token refresh, not in the cache as first thought.",
+      "assertions": [
+        "Says plainly what was not finished",
+        "Records the wrong hypothesis and the correction",
+        "Next steps present"
+      ],
+      "files": []
+    }
+  ]
+}

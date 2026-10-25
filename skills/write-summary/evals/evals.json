@@ -1,0 +1,27 @@
+{
+  "skill_name": "write-summary",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Summarize this thread: 40 messages where Mona delays release 2.6 by one week, Priya freezes scope, 340 users affected, sync failure at 2.1 percent, and nobody owns the hotfix.",
+      "expected_output": "Gist sentence, decisions with owners, a numbers table, and the open question kept open with no owner.",
+      "assertions": [
+        "Gist first",
+        "Every decision carries its owner",
+        "Numbers exact in a table",
+        "Open question kept, not settled"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Summarize this log: 500 lines where the retry storm at 14:02 causes a queue backup until 14:20, resolved by scaling to 4 workers.",
+      "assertions": [
+        "Times and counts kept exact",
+        "Cause and resolution both kept",
+        "No opinion added"
+      ],
+      "files": []
+    }
+  ]
+}

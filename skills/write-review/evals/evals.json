@@ -1,0 +1,28 @@
+{
+  "skill_name": "write-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review this diff: src/auth.ts line 41 adds `if (user.token)` before load, but `user` is null on the reset path; line 58 uses the literal 3 as a retry cap; no test covers the reset path. The caller `loginRoute` passes `req.session.user`, which is null after a password reset.",
+      "expected_output": "Findings in the path:line format, severities only where they help, a question for the missing test, no praise, no diff summary.",
+      "assertions": [
+        "One finding per line with location, problem, fix",
+        "Bug on the null path named",
+        "Missing test asked as a question",
+        "No praise or diff restatement"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Review this diff. The change is correct and tested.",
+      "expected_output": "Honest empty result: states what was checked and that no finding exists. No invented finding, no praise filler.",
+      "assertions": [
+        "No invented finding",
+        "States what was checked",
+        "No praise line"
+      ],
+      "files": []
+    }
+  ]
+}

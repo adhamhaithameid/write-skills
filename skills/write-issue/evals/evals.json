@@ -1,0 +1,28 @@
+{
+  "skill_name": "write-issue",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "File an issue. The user says: 'export is broken for me on big files, it just fails, no error. Chrome, the app is 2.4.1. It worked on small files.'",
+      "expected_output": "Asks for the missing facts, or drafts with every assumption marked. Title names the symptom. Steps are numbered and checkable. No invented error line.",
+      "assertions": [
+        "Title is the specific symptom",
+        "Asks for missing facts or marks assumptions",
+        "No invented error text",
+        "Steps numbered and checkable"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Improve this issue title and body: 'BUG: login bad'.",
+      "expected_output": "Asks what actually happens before rewriting, or produces a template draft with placeholders, never invented details.",
+      "assertions": [
+        "No invented symptom",
+        "Template with placeholders or questions",
+        "Symptom-title form explained"
+      ],
+      "files": []
+    }
+  ]
+}

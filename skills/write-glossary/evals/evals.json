@@ -1,0 +1,27 @@
+{
+  "skill_name": "write-glossary",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build a glossary. In this repo: the code names it Gateway, the readme says gateway service, the api docs say edge proxy, the team says front door.",
+      "expected_output": "One entry for the concept with the code term preferred, synonyms merged and listed for searchability, format started as a table.",
+      "assertions": [
+        "One term chosen, code term preferred",
+        "Synonyms listed as merged",
+        "One-line meaning",
+        "No rename applied to code"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "The team disagrees: half say tenant, half say workspace. Update the glossary.",
+      "assertions": [
+        "Disputed term marked proposed",
+        "One open question line added",
+        "No silent choice made"
+      ],
+      "files": []
+    }
+  ]
+}
