@@ -78,6 +78,21 @@ A page can pass every rule and still read like a machine wrote it. Every sentenc
 - Take a position where the job allows it. Explanation weighs options, so say which one you favor. Reference stays neutral.
 - Trade the sterile for the particular. "Schema changes can cause issues" says nothing; "a column rename fails the build" says the thing.
 
+## Style the page
+
+Markdown carries the structure. The devices, in order of strength:
+
+1. **Headings** carry the plan of the page. One h1, no skipped levels, sentence case.
+2. **Fenced code** with a language tag. Use a `diff` fence for a change to existing code, so the reader sees the shape of the change before its content.
+3. **Callouts** for what the reader must act on: note, tip, important, warning, caution, when the platform renders them. One callout carries one instruction.
+4. **Tables** for comparisons that share 2 or more properties. Three paragraphs of parallel facts become one table.
+5. **Bold lead-ins** only when the label names the item and the line adds new detail. A label that restates the line is noise.
+6. **Images** carry alt text that states what the image shows. A diagram gets a one-line text summary beside it.
+7. **Collapsed sections** for long output the reader may skip: logs, matrices, raw data. The summary line names what sits inside.
+8. **Links** say where they go, in their own words.
+
+No color codes anywhere. Markdown carries none, and a hex code or an escape sequence in prose renders as noise. Emphasis comes from structure: the heading, the callout, the table, the fence. When a page needs more paint than structure, the page is not arranged yet.
+
 ## Claims and evidence
 
 - Write the symbols and paths that exist at this commit.

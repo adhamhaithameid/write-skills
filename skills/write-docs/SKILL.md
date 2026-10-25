@@ -50,6 +50,22 @@ Jobs stay separate. Split the page and link, rather than mixing.
 11. One thing carries one name across the whole document.
 12. Name the real symbols, paths, flags, and commands. The codebase supplies the words.
 
+## Style the page
+
+Markdown carries the structure. Use the devices in order of strength.
+
+1. Headings carry the plan of the page. One h1, no skipped levels.
+2. Fenced code with a language tag. Use a diff fence for a change to existing code.
+3. Callouts for what the reader must act on, when the platform supports them:
+```markdown
+> [!WARNING]
+> A column rename fails the build.
+```
+4. Tables for comparisons that share 2 or more properties.
+5. Bold lead-ins only when the label names the item and the line adds new detail.
+6. Images carry alt text that states what the image shows.
+7. No color codes in the text. Markdown has none. Emphasis comes from structure, not paint.
+
 ## Revise an existing document
 
 1. Read the whole page once before you change a line.

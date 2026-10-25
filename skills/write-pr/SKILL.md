@@ -59,6 +59,30 @@ Pick the smallest view that makes the point. One sketch is enough for most chang
 - Show a control flow change as a diff of the call tree.
 - Show a UI change with a screenshot when the environment allows it.
 
+## Formatting
+
+The host renders markdown. Use the devices it renders.
+
+- Bold the two risk verdicts: the door and the blast radius. Bold nothing else.
+- Use a diff fence for a code change. Give every fence a language tag.
+- Collapse long output behind a summary line:
+```markdown
+<details>
+<summary>Full test log, 214 lines</summary>
+
+The log text sits here, or a fenced block with a language tag.
+
+</details>
+```
+- Use the alert callouts of the host for a one-way door:
+```markdown
+> [!WARNING]
+> This change drops the old table. Run the migration before the next deploy.
+```
+- Use a table for before and after numbers.
+- Use a task list for follow-up work the reviewer must check.
+- No color codes. The host renders none.
+
 ## Rules
 
 - State what the change does first. State why second.

@@ -77,6 +77,19 @@ At every depth, copy code, commands, paths, numbers, and error text exactly. Def
 
 After the draft, open `references/ai-patterns.md`. Find every pattern in the draft. Rewrite each match.
 
+## Rich styling
+
+Use styling to guide the eye. One device marks one point.
+
+- Bold: the verdict or the one key fact of the reply. Bold a word or a short phrase, never a sentence, and never twice in one reply.
+- Inline code: anything a person types or reads from a screen. Commands, paths, symbols, and error text.
+- Italics: a term at its first definition. Nothing else.
+- Headings: only when the reply has 3 or more distinct sections.
+- Lists and tables: 3 or more parallel items. Fewer items stay in the sentence.
+- Blockquote: the words of another person, quoted exact.
+- No color codes, no capital-letter shouting, no underline. Chat hosts render none of these.
+- When the host shows plain text only, write plain text. Strip the markup.
+
 ## Brief voice
 
 Level 4 runs here. Chat replies only. Saved text uses level 2 or higher.
@@ -101,6 +114,7 @@ Leave the brief voice for a security warning, an irreversible action, an order t
 - Is every sentence 25 words or fewer, with one idea?
 - Is the voice active? Are the terms stable?
 - Did you remove every pattern from `references/ai-patterns.md`?
+- Does every styling device mark a different point, at most one bold per reply?
 - Does the last sentence add a fact? Delete a recap or an offer of help.
 
 ## Safety and conflicts

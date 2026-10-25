@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1 - 2026-10-25
+
+- Rich styling rules in write-core, write-docs, and write-pr: bold discipline, callouts, diff fences, collapsed sections, tables, alt text. Markdown carries no color codes, so emphasis comes from structure.
+
+
 ## 0.3.0 - 2026-10-25
 
 - Seven new skills: write-review, write-release, write-issue, write-summary, write-handoff, write-report, write-glossary. The set is now fifteen.
