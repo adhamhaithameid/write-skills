@@ -61,16 +61,29 @@ Acceptance criteria:
 Blocked by:
 - <ticket key or title, or "none">
 
-Points: <n>
-Points reason: <size, risk, or unknowns, in one line>
+Points: <n, from the Fibonacci scale>
+Points reason: <effort, complexity, or uncertainty, in one line>
 ```
 
 ## Story points
 
-1. Estimate from three inputs: size, risk, and unknowns.
-2. Every estimate carries one reason line. A bare number carries no information.
-3. When estimates differ by much, the story hides an unknown. Split it, or list the unknown in the story.
-4. Points measure effort, not value. The value lives in the story line.
+Story points estimate a ticket's relative size, not the days it takes.
+
+Three inputs combine:
+
+1. Effort: how much work is involved.
+2. Complexity: how difficult the behavior is to build and test.
+3. Uncertainty: how much is unknown or risky.
+
+Use the Fibonacci scale: 1, 2, 3, 5, 8, 13, 21. The gaps grow because large tasks resist a precise estimate. A debate between 12 and 13 adds no value.
+
+Calibration:
+
+- 8 points: substantial but contained, such as email administration.
+- 13 points: a large capability with several connected workflows, such as authentication and recovery.
+- 21 points: very large and uncertain, such as scoped authorization. This signals a need to refine the story or split it into smaller internal tasks.
+
+Every estimate carries one reason line, named from the three inputs. A bare number carries no information. When estimates differ by much, the story hides an unknown. Split it, or list the unknown in the story. Points measure size, not value. The value lives in the story line.
 
 ## Rules
 

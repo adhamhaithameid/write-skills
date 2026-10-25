@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 - 2026-10-24
+
+- write-jira: Fibonacci story points with the effort, complexity, and uncertainty model, and a three-point calibration.
+
 ## 0.2.0 - 2026-10-24
 
 - write-commit: pruned the formatting rules that duplicate default model behavior. The process rules stay: read the history, let the repo convention win, write text only.

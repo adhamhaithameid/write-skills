@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Break this plan into a Jira epic with stories and story points. Plan: users want to attach files to tasks. The backend needs an attachment table and upload endpoint, the web app needs an attach button and preview, and the mobile app needs the same. Each surface should ship on its own.",
-      "expected_output": "One epic named for the outcome, plus stories that each cut a complete vertical path: data, endpoint, one client surface, tests. Each story has a testable acceptance checklist, a blocked-by line, and story points with a one-line reason built from size, risk, and unknowns.",
+      "expected_output": "One epic named for the outcome, plus stories that each cut a complete vertical path: data, endpoint, one client surface, tests. Each story has a testable acceptance checklist, a blocked-by line, and story points with a one-line reason built from effort, complexity, and uncertainty.",
       "assertions": [
         "Epic title states the outcome, not a feature word",
         "Each story is a vertical slice, not a layer",
