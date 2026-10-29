@@ -17,6 +17,7 @@ To run them on every commit, run `git config core.hooksPath .githooks` once.
 - Wrap rule text that appears in more than one skill in `<!-- sync:NAME start -->` and `<!-- sync:NAME end -->` markers. The check fails when copies differ. Edit every copy together.
 - Change `docs/BLOCKS.md` first when the set of skills changes.
 - Update `docs/STATE.md` in the same commit as any change to the set.
+- Update the README skill table in the same commit too. It renders on GitHub, npm, and skills.sh.
 - List every authored markdown file in `tools/config.json` under `lint_paths`.
 - Keep each skill alone. Do not name another skill inside a skill folder.
 - Keep every skill auto-invoked. Do not add `disable-model-invocation`.

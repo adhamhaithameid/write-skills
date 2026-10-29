@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1 - 2026-10-29
+
+- Store-front polish: badges, a why section, a quick start, the skill table grouped into four families, per-agent install, and a docs map in the README. The npm description and keywords now match the twenty-two-skill set.
+
+
 ## 0.4.0 - 2026-10-29
 
 - Seven new skills: write-tldr, write-plan, write-again, help-write, write-adr, write-prd, write-ste. The set is now twenty-two.

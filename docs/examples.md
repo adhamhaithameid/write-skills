@@ -2,7 +2,11 @@
 
 One before-and-after pair per skill. The pairs are hand-written examples of each rule set, not recorded sessions. Each skill folder carries its own example, and its `evals/` folder turns the same scenario into a testable case.
 
-## write-better
+## Chat and replies
+
+The reply is the product. These skills shape it.
+
+### write-better
 
 Before:
 ```text
@@ -17,7 +21,7 @@ The tool caches your queries. A repeat query answers in 12 ms. A cold
 query answers in 340 ms.
 ```
 
-## write-compact
+### write-compact
 
 Before:
 ```text
@@ -30,23 +34,33 @@ After:
 Auth fails. The token check reads the wrong claim. Fix in auth.ts line 40:
 ```
 
-## write-docs
+### write-tldr
 
-Before:
+Before, a 60-line migration answer ends with nothing.
+
+After, the same answer ends with:
 ```text
-Configuration of the retry behavior for the mail client is performed via
-client.json. Note that it's important to remember that running with
---dry-run will output what would have been sent.
+TLDR: Run scripts/migrate-login.ts once, then deploy. Rollback: restore
+the users.email column before the next release.
+Found: The retry helper in queue.py double-counts failures. No ticket yet.
 ```
+
+### write-again
+
+Before, the same failed explanation repeated.
 
 After:
 ```text
-`mail.ts` reads the retry count and the delay from `client.json`. Each
-retry waits twice as long as the one before it. Run `mail.ts --dry-run` to
-print the messages without sending them.
+New example, same mechanism. A coffee shop takes orders. One worker
+remakes a lost order; the queue grows. Retries work the same way.
+Next step: say which part is unclear, the policy or the queue.
 ```
 
-## write-pr
+## Code
+
+The diff talks. These skills make the words around it carry weight.
+
+### write-pr
 
 Before:
 ```text
@@ -69,7 +83,7 @@ in after a password reset.
 - Blast radius: login only. No other token check changes.
 ```
 
-## write-commit
+### write-commit
 
 Before, a repo whose history reads "Docs: fix typo", "Parser: handle empty lines":
 ```text
@@ -81,7 +95,7 @@ After, the convention discovered from the history:
 Queue: add RetryQueue class
 ```
 
-## write-comments
+### write-comments
 
 Before:
 ```ts
@@ -95,7 +109,7 @@ After:
 i++;
 ```
 
-## write-review
+### write-review
 
 Before:
 ```text
@@ -112,7 +126,58 @@ src/auth.test.ts question. No test covers the reset path. Skipped on
 purpose?
 ```
 
-## write-jira
+## Product and planning
+
+Decisions and scope, written so a reviewer can act.
+
+### write-plan
+
+Before:
+```text
+We should improve search. First we profile, then look at options, then
+implement. We will iterate as needed.
+```
+
+After:
+```text
+Goal: search answers in 200 ms or less at 10000 rows. Approaches: the
+index (recommended), a search engine, caching. Steps: add the index on
+staging, load-test, ship. Risk: writes slow; watch insert time.
+```
+
+### write-adr
+
+Before:
+```text
+We talked about caching and decided to use Redis. We might revisit later.
+```
+
+After:
+```text
+# 0012. Store sessions in Redis
+Status: Accepted
+Context: 40000 sessions lost on every deploy. Rejected: sticky balancer,
+Postgres.
+Decision: We will store user sessions in Redis with a 7-day TTL.
+Consequences: deploys keep sessions. One more service to run.
+```
+
+### write-prd
+
+Before:
+```text
+We need better notifications. It should be flexible and robust.
+```
+
+After:
+```text
+Problem: 62 percent of September tickets asked where an order is after an
+unreported delay. Goal: users learn of a change in 60 s or less.
+Non-goals: email digests, partner APIs.
+Metric: ticket count, baseline 340 per month, target 100.
+```
+
+### write-jira
 
 Before:
 ```text
@@ -136,7 +201,7 @@ Points: 5
 Points reason: one table, one endpoint, and one screen in a single slice.
 ```
 
-## write-issue
+### write-issue
 
 Before:
 ```text
@@ -158,7 +223,7 @@ Actual: no file, no error. The console shows the line below.
 Evidence: "Uncaught RangeError: Invalid array length" at export.ts:214.
 ```
 
-## write-release
+### write-release
 
 Before:
 ```text
@@ -176,7 +241,49 @@ After:
 - The API retries a request once when the server answers 429. (#390)
 ```
 
-## write-report
+## Knowledge
+
+Facts that must survive the compression.
+
+### write-docs
+
+Before:
+```text
+Configuration of the retry behavior for the mail client is performed via
+client.json. Note that it's important to remember that running with
+--dry-run will output what would have been sent.
+```
+
+After:
+```text
+`mail.ts` reads the retry count and the delay from `client.json`. Each
+retry waits twice as long as the one before it. Run `mail.ts --dry-run` to
+print the messages without sending them.
+```
+
+### write-summary
+
+Before: forty messages of a release thread.
+
+After:
+```text
+Gist: the team delayed release 2.6 to fix the sync bug first.
+
+Decisions:
+- Delay 2.6 by one week. Owner: Mona.
+- Freeze scope today. Owner: Priya.
+
+Numbers:
+| Metric | Value |
+|---|---|
+| Affected users | 340 |
+| Sync failure rate | 2.1 percent |
+
+Open questions:
+- Who staffs the hotfix? No owner yet.
+```
+
+### write-report
 
 Before:
 ```text
@@ -199,29 +306,7 @@ Evidence:
 Confidence: high. The rollback restores the old plan.
 ```
 
-## write-summary
-
-Before: forty messages of a release thread.
-
-After:
-```text
-Gist: the team delayed release 2.6 to fix the sync bug first.
-
-Decisions:
-- Delay 2.6 by one week. Owner: Mona.
-- Freeze scope today. Owner: Priya.
-
-Numbers:
-| Metric | Value |
-|---|---|
-| Affected users | 340 |
-| Sync failure rate | 2.1 percent |
-
-Open questions:
-- Who staffs the hotfix? No owner yet.
-```
-
-## write-handoff
+### write-handoff
 
 Before: the last hour of a session, from memory.
 
@@ -241,7 +326,7 @@ Next steps:
 Traps: do not touch the cache module. The flake there is a known issue.
 ```
 
-## write-longform
+### write-longform
 
 Before, a fragment in the pile:
 ```text
@@ -256,7 +341,7 @@ error count stays at zero, and the broken consumer never gets a ticket.
 That is the trade: calm dashboards, slower truth.
 ```
 
-## write-glossary
+### write-glossary
 
 Before, terms scattered across three docs:
 ```text
@@ -273,76 +358,7 @@ After:
 | edge proxy (merged) | Old name for the gateway. | api docs before 2026-09 |
 ```
 
-## write-tldr
-
-Before, a 60-line migration answer ends with nothing.
-
-After, the same answer ends with:
-```text
-TLDR: Run scripts/migrate-login.ts once, then deploy. Rollback: restore
-the users.email column before the next release.
-Found: The retry helper in queue.py double-counts failures. No ticket yet.
-```
-
-## write-plan
-
-Before:
-```text
-We should improve search. First we profile, then look at options, then
-implement. We will iterate as needed.
-```
-
-After:
-```text
-Goal: search answers in 200 ms or less at 10000 rows. Approaches: the
-index (recommended), a search engine, caching. Steps: add the index on
-staging, load-test, ship. Risk: writes slow; watch insert time.
-```
-
-## write-adr
-
-Before:
-```text
-We talked about caching and decided to use Redis. We might revisit later.
-```
-
-After:
-```text
-# 0012. Store sessions in Redis
-Status: Accepted
-Context: 40000 sessions lost on every deploy. Rejected: sticky balancer,
-Postgres.
-Decision: We will store user sessions in Redis with a 7-day TTL.
-Consequences: deploys keep sessions. One more service to run.
-```
-
-## write-prd
-
-Before:
-```text
-We need better notifications. It should be flexible and robust.
-```
-
-After:
-```text
-Problem: 62 percent of September tickets asked where an order is after an
-unreported delay. Goal: users learn of a change in 60 s or less.
-Non-goals: email digests, partner APIs.
-Metric: ticket count, baseline 340 per month, target 100.
-```
-
-## write-again
-
-Before, the same failed explanation repeated.
-
-After:
-```text
-New example, same mechanism. A coffee shop takes orders. One worker
-remakes a lost order; the queue grows. Retries work the same way.
-Next step: say which part is unclear, the policy or the queue.
-```
-
-## write-ste
+### write-ste
 
 Before:
 ```text

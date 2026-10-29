@@ -1,18 +1,31 @@
 {
   "name": "write-skills",
-  "version": "0.4.0",
-  "description": "Eight agent skills for writing. Each skill works alone.",
+  "version": "0.4.1",
+  "description": "Twenty-two agent skills for writing. Each skill works alone. The reading experience must never feel like hell.",
   "license": "MIT",
   "author": "adhamhaithameid",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/adhamhaithameid/write-skills.git"
   },
+  "homepage": "https://www.skills.sh/adhamhaithameid/write-skills",
+  "bugs": "https://github.com/adhamhaithameid/write-skills/issues",
   "keywords": [
     "agent",
+    "agent-skills",
     "skills",
     "claude",
+    "claude-code",
+    "cursor",
+    "codex",
     "writing",
+    "documentation",
+    "readability",
+    "tldr",
+    "adr",
+    "prd",
+    "commit-message",
+    "release-notes",
     "simplified-technical-english"
   ],
   "files": [
