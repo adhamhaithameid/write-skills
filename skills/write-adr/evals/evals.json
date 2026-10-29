@@ -1,0 +1,28 @@
+{
+  "skill_name": "write-adr",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Record the decision: sessions move to Redis with a 7-day TTL. Peak 40000 sessions, in-memory store loses them on deploy. Rejected: sticky balancer, Postgres table.",
+      "expected_output": "Nygard-shape record: imperative title, date, status, context with the numbers and rejected options, one-sentence decision, honest consequences.",
+      "assertions": [
+        "Title states the decision",
+        "Rejected options in context with reasons",
+        "Decision is one sentence",
+        "Consequences name a cost"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "The team changed its mind: sessions move back to Postgres. Update ADR 0012.",
+      "expected_output": "Never edits the accepted record; writes a new record that supersedes 0012.",
+      "assertions": [
+        "New record created",
+        "Supersedes the old number",
+        "Old record untouched"
+      ],
+      "files": []
+    }
+  ]
+}

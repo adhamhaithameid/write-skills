@@ -298,7 +298,7 @@ def check_cross_refs(repo, fails, blocklist):
 
 
 def iter_text_files(repo):
-    skip_dirs = {".git", "tests", "__pycache__", ".opencode", ".zcode", "node_modules"}
+    skip_dirs = {".git", "tests", "__pycache__", ".opencode", ".zcode", ".remember", "node_modules"}
     for f in repo.rglob("*"):
         if not f.is_file():
             continue

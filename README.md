@@ -1,13 +1,16 @@
 # write-skills
 
-Fifteen agent skills for writing. Each skill works alone. Install one skill or all of them.
+Twenty-two agent skills for writing. Each skill works alone. Install one skill or all of them.
+
+The mission: the reading experience must never feel like hell. Every skill serves that.
 
 ## Skills
 
 | Skill | Use for |
 |---|---|
-| write-core | Chat answers, explanations, and notes. Reader levels, depth, sentence rules, AI patterns. |
-| write-compact | Brief replies on request, or explain a confusing reply again. |
+| write-better | Chat answers, explanations, and notes. Reader levels, depth, sentence rules, AI patterns, reader load. |
+| write-compact | Brief replies on request. The whole reply stays short. |
+| write-tldr | A short block at the end of a long answer: TLDR plus what was found. |
 | write-docs | READMEs, tutorials, how-to guides, reference pages, explanations, RFCs, and documents an agent reads. |
 | write-pr | PR title and description from the change and the evidence. |
 | write-commit | Commit message from the staged diff and the repository history. |
@@ -21,12 +24,18 @@ Fifteen agent skills for writing. Each skill works alone. Install one skill or a
 | write-handoff | Handoff notes so work continues in a fresh session. |
 | write-longform | A staged long-form mission: collect raw material, then build the article. |
 | write-glossary | Build or clean a glossary, one term per concept. |
+| write-plan | A plan before work starts: goal, approaches, steps, risks. |
+| write-adr | Architecture decision records: context, decision, consequences. |
+| write-prd | Product requirements: problem, goals, testable requirements, metrics. |
+| write-again | Rewrite the last output, explain a failed answer again, or refresh a stale doc. |
+| write-ste | Enforce Simplified Technical English on any text, violations named by rule. |
+| help-write | Ask in chat which skill fits the task; it routes and follows. |
 
 ## See the difference
 
 Every skill states what it changes. Three samples here. The full gallery of all fifteen is in `docs/examples.md`. The pairs are hand-written examples of the rules, not recorded sessions.
 
-write-core, a chat answer:
+write-better, a chat answer:
 
 ```text
 Before: "Sure! I'd be happy to help. In order to boost your productivity,
@@ -67,7 +76,7 @@ npx skills add adhamhaithameid/write-skills
 Install one skill:
 
 ```
-npx skills add adhamhaithameid/write-skills --skill write-core
+npx skills add adhamhaithameid/write-skills --skill write-better
 ```
 
 Install the npm package, then copy a skill folder into the skills folder of your agent, for example `~/.claude/skills/`:

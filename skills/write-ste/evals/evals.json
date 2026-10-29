@@ -1,0 +1,27 @@
+{
+  "skill_name": "write-ste",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Check this text against STE: 'Utilization of the retry mechanism should be avoided in scenarios where the upstream dependency has been observed to exhibit flakiness.'",
+      "expected_output": "Rewrite to 'Do not retry when the upstream dependency is flaky.' plus violations named by rule.",
+      "assertions": [
+        "Meaning kept",
+        "Violations named, not just fixed",
+        "Passive voice removed",
+        "Shorter common words used"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Check this shell command against STE: tar -czf backup.tar.gz ~/projects",
+      "expected_output": "States that shell commands sit outside STE scope; leaves the command alone.",
+      "assertions": [
+        "Scope rule applied",
+        "Command untouched"
+      ],
+      "files": []
+    }
+  ]
+}

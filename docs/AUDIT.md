@@ -6,7 +6,7 @@ Rubric: the 24-check skill checklist. Each check scores 0, 1, or 2. Weighted tot
 
 | Skill | Score | Percent | Grade |
 |---|---|---|---|
-| write-core | 58 | 81 percent | B |
+| write-better | 58 | 81 percent | B |
 | write-compact | 63 | 88 percent | B |
 | write-docs | 61 | 85 percent | B |
 | write-pr | 63 | 88 percent | B |
@@ -25,10 +25,10 @@ Rubric: the 24-check skill checklist. Each check scores 0, 1, or 2. Weighted tot
 
 ## Findings fixed in this audit
 
-1. Four skills used terms that only write-core defines: "floor rules" in write-compact, "reader level" in write-longform, and "level 2" in write-pr. All reworded. No skill now depends on the vocabulary of another.
+1. Four skills used terms that only write-better defines: "floor rules" in write-compact, "reader level" in write-longform, and "level 2" in write-pr. All reworded. No skill now depends on the vocabulary of another.
 2. Jargon before definition: "one-way door" in write-pr and "pile file" in write-longform. Both defined at first use, or reworded.
 3. write-docs claimed release notes while the manifest held them back. write-release now owns them, and the write-docs description dropped the claim.
-4. write-core claimed status updates and bug reports. write-report and write-issue own them now, so the three descriptions no longer collide.
+4. write-better claimed status updates and bug reports. write-report and write-issue own them now, so the three descriptions no longer collide.
 5. Four skills had no example. Every skill now carries one, and docs/examples.md holds the gallery.
 
 ## Weakest checks, set wide
@@ -42,7 +42,7 @@ Rubric: the 24-check skill checklist. Each check scores 0, 1, or 2. Weighted tot
 
 1. Run the eval cases for the seven new skills and the unrun core and longform cases.
 2. Add three should-not-fire prompts per skill to the routing test.
-3. Sharpen step endings into checkable criteria, starting with write-core and write-docs.
+3. Sharpen step endings into checkable criteria, starting with write-better and write-docs.
 4. Cap the set at fifteen until the trigger test proves no collisions.
 
 ## Method note

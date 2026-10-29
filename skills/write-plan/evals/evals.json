@@ -1,0 +1,28 @@
+{
+  "skill_name": "write-plan",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a plan: search answers in 900 ms at p95, target 200 ms at 10000 rows. Missing index on listings.title. Options: add index; move to a search engine; cache results.",
+      "expected_output": "Goal with a testable done condition, current state with a source, 2 or 3 approaches with one marked, ordered steps each with a checkable result, risks, out of scope.",
+      "assertions": [
+        "Done condition is testable",
+        "One approach marked with a reason",
+        "Steps end on checkable results",
+        "Risks and out-of-scope present",
+        "No invented numbers"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Write a plan to make the app faster. That is all you get.",
+      "expected_output": "Names what is missing (goal, baseline, constraints) and asks, or marks every invented target as an assumption.",
+      "assertions": [
+        "No invented baseline",
+        "Asks for missing facts or marks assumptions"
+      ],
+      "files": []
+    }
+  ]
+}

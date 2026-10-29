@@ -1,0 +1,27 @@
+{
+  "skill_name": "write-prd",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a PRD: 62 percent of September tickets asked where an order is after an unreported delay. Goal: users learn of a status change in 60 s. Users can mute types.",
+      "expected_output": "Problem with the source, 3 or fewer testable goals, non-goals, a scenario, Must/Should testable requirements, metrics with baseline and target, open questions with owners.",
+      "assertions": [
+        "Problem carries the evidence",
+        "Non-goals present",
+        "Requirements testable with Must/Should",
+        "Metrics have baseline and target"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Write a PRD for better notifications. That is all you get.",
+      "expected_output": "Asks for the problem, the users, and the evidence before drafting; or marks every assumption.",
+      "assertions": [
+        "No invented numbers",
+        "Asks or marks assumptions"
+      ],
+      "files": []
+    }
+  ]
+}

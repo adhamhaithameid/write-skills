@@ -1,13 +1,18 @@
 # Block manifest
 
+The mission of this set: the reading experience must never feel like hell.
+
 One row for each block in this set. Change this file first when the set changes. The rule register in `docs/RULES.md` stays the authoring source for every rule a block embeds.
 
 ## The set
 
 | Block | Role | Activation |
 |---|---|---|
-| write-core | General prose floor: reader levels, depth, sentence rules, AI patterns. | Auto, on any prose task. |
-| write-compact | Brief replies on request, or rebuild a reply that did not land. | Auto, or "brief mode". |
+| write-better | General prose floor: reader levels, depth, sentence rules, AI patterns, reader load. | Auto, on any prose task. |
+| write-compact | The whole reply stays short. | Auto, or "brief mode". |
+| write-tldr | A short block at the end of a long answer: TLDR plus Found. | Auto, past 30 lines or on request. |
+| write-again | Rewrite the last output, explain again, or refresh a stale doc. | Auto, on "again" or "wait what". |
+| help-write | Read the conversation, name the skill that owns the deliverable. | On request, or when the type is unclear. |
 | write-docs | Documents for humans, and documents an agent reads. | Auto, on document tasks. |
 | write-pr | PR title and body from the change and the evidence. | Auto, on PR text. |
 | write-commit | Commit message from the staged diff and the history. | Auto, on commit text. |
@@ -21,6 +26,10 @@ One row for each block in this set. Change this file first when the set changes.
 | write-handoff | Handoff notes for a fresh session. | Auto, on handoff requests. |
 | write-longform | Staged long-form mission under one shared brief. | Explicit request only. |
 | write-glossary | Build or clean a glossary, one term per concept. | Auto, on glossary work. |
+| write-plan | A plan before work starts: goal, approaches, steps, risks. | Auto, on plan requests. |
+| write-adr | Architecture decision records in the Nygard shape. | Auto, on decision records. |
+| write-prd | Product requirements: problem, goals, requirements, metrics. | Auto, on PRD requests. |
+| write-ste | Enforce STE on any text, violations named by rule. | Auto, on "ste" requests. |
 
 ## Design rules
 
@@ -44,4 +53,4 @@ The upstream projects and their licenses are listed in `THIRD_PARTY_NOTICES.md`.
 
 ## Set size
 
-Fifteen descriptions load in every session. Watch trigger overlap before adding a sixteenth. The routing test in `docs/EVALS.md` is the regression net.
+Twenty-two descriptions load in every session. The negative-trigger routing test in `docs/ROUTING-TEST.md` is the regression net. It is pending for the 22-skill set. Run it before adding a twenty-third.

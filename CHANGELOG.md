@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 - 2026-10-29
+
+- Seven new skills: write-tldr, write-plan, write-again, help-write, write-adr, write-prd, write-ste. The set is now twenty-two.
+- write-core renamed to write-better. New reader-load rules: the seven reader-slowing patterns from the NYU/UT Austin study, plus the anti-homework rules.
+- write-compact: explain-again moved to write-again. A sibling rule sends long answers to a short end-of-turn block.
+- Mission line added to the README and BLOCKS: the reading experience must never feel like hell.
+
+
 ## 0.3.1 - 2026-10-25
 
 - Rich styling rules in write-core, write-docs, and write-pr: bold discipline, callouts, diff fences, collapsed sections, tables, alt text. Markdown carries no color codes, so emphasis comes from structure.

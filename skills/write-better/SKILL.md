@@ -1,5 +1,5 @@
 ---
-name: write-core
+name: write-better
 description: >
   Use when the agent writes any prose a person will read: chat answers,
   explanations, and notes. Also use when the
@@ -7,7 +7,7 @@ description: >
   "normal mode".
 ---
 
-# Write core
+# Write better
 
 Write so the reader understands at the first read. Pick a level and a depth. Write. Then check.
 
@@ -77,6 +77,19 @@ At every depth, copy code, commands, paths, numbers, and error text exactly. Def
 
 After the draft, open `references/ai-patterns.md`. Find every pattern in the draft. Rewrite each match.
 
+## Reader load
+
+Reading the reply must never feel like homework. Reply like a colleague at a desk, not a teacher at a board.
+
+1. No announced structure. Start with point one, not the plan.
+2. No headings or numbering under 3 distinct sections.
+3. No closing summary, except a short block at the end of a long turn.
+4. Prose carries the argument. Bullets carry true lists.
+5. Vary the sentence length. A short sentence lands a point.
+6. Fix the seven reader-slowing patterns: rare pairs, long gaps, dropped connectors, tacked nouns, nouns as verbs, things as people, flipped roles.
+
+The full fixes and examples live in `references/reader-load.md`.
+
 ## Rich styling
 
 Use styling to guide the eye. One device marks one point.
@@ -113,8 +126,9 @@ Leave the brief voice for a security warning, an irreversible action, an order t
 - Does the first sentence give the answer, not a plan?
 - Is every sentence 25 words or fewer, with one idea?
 - Is the voice active? Are the terms stable?
-- Did you remove every pattern from `references/ai-patterns.md`?
+- Did you remove every pattern from `references/ai-patterns.md` and `references/reader-load.md`?
 - Does every styling device mark a different point, at most one bold per reply?
+- Does any part of it feel like work to read? Fix that part.
 - Does the last sentence add a fact? Delete a recap or an offer of help.
 
 ## Safety and conflicts
@@ -134,6 +148,7 @@ Leave the brief voice for a security warning, an irreversible action, an order t
 ## Files
 
 - `references/ai-patterns.md`: the AI patterns to remove from every draft.
+- `references/reader-load.md`: the seven reader-slowing patterns, and the anti-homework rules.
 - `references/profile.md`: a level for each topic. Edit it to match the reader.
 - `references/ste.md`: the Simplified Technical English rules.
 

@@ -2,7 +2,7 @@
 
 One before-and-after pair per skill. The pairs are hand-written examples of each rule set, not recorded sessions. Each skill folder carries its own example, and its `evals/` folder turns the same scenario into a testable case.
 
-## write-core
+## write-better
 
 Before:
 ```text
@@ -271,4 +271,86 @@ After:
 |---|---|---|
 | gateway | The service that routes requests to the backends. | readme, api docs |
 | edge proxy (merged) | Old name for the gateway. | api docs before 2026-09 |
+```
+
+## write-tldr
+
+Before, a 60-line migration answer ends with nothing.
+
+After, the same answer ends with:
+```text
+TLDR: Run scripts/migrate-login.ts once, then deploy. Rollback: restore
+the users.email column before the next release.
+Found: The retry helper in queue.py double-counts failures. No ticket yet.
+```
+
+## write-plan
+
+Before:
+```text
+We should improve search. First we profile, then look at options, then
+implement. We will iterate as needed.
+```
+
+After:
+```text
+Goal: search answers in 200 ms or less at 10000 rows. Approaches: the
+index (recommended), a search engine, caching. Steps: add the index on
+staging, load-test, ship. Risk: writes slow; watch insert time.
+```
+
+## write-adr
+
+Before:
+```text
+We talked about caching and decided to use Redis. We might revisit later.
+```
+
+After:
+```text
+# 0012. Store sessions in Redis
+Status: Accepted
+Context: 40000 sessions lost on every deploy. Rejected: sticky balancer,
+Postgres.
+Decision: We will store user sessions in Redis with a 7-day TTL.
+Consequences: deploys keep sessions. One more service to run.
+```
+
+## write-prd
+
+Before:
+```text
+We need better notifications. It should be flexible and robust.
+```
+
+After:
+```text
+Problem: 62 percent of September tickets asked where an order is after an
+unreported delay. Goal: users learn of a change in 60 s or less.
+Non-goals: email digests, partner APIs.
+Metric: ticket count, baseline 340 per month, target 100.
+```
+
+## write-again
+
+Before, the same failed explanation repeated.
+
+After:
+```text
+New example, same mechanism. A coffee shop takes orders. One worker
+remakes a lost order; the queue grows. Retries work the same way.
+Next step: say which part is unclear, the policy or the queue.
+```
+
+## write-ste
+
+Before:
+```text
+Utilization of the retry mechanism should be avoided in scenarios where
+the upstream dependency has been observed to exhibit flakiness.
+```
+
+After:
+```text
+Do not retry when the upstream dependency is flaky.
 ```

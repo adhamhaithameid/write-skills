@@ -1,0 +1,28 @@
+{
+  "skill_name": "write-again",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Previous reply: 'The decorator wraps the handler so the middleware chain stays pure.' User: 'wait what? I don't follow.' Rebuild it.",
+      "expected_output": "Explain-again: new example or analogy, defines the failed terms, ends with a next step. Not the same words again.",
+      "assertions": [
+        "New example or analogy",
+        "Defines the failed terms",
+        "Ends with a next step",
+        "No repeat of the old wording"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "The doc says the export limit is 10000 rows, but the code now caps at 50000. Refresh the doc.",
+      "expected_output": "Refresh mode: updates only the broken claim, leaves the rest, notes the check date.",
+      "assertions": [
+        "Only the stale claim changes",
+        "Check date noted",
+        "No rewording of untouched text"
+      ],
+      "files": []
+    }
+  ]
+}

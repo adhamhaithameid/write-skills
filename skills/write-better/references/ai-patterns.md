@@ -41,3 +41,15 @@ Scan the draft for these patterns. Rewrite each match. Keep the meaning and the 
 ## Plain speech
 
 - **B22** Say what it does, not how it feels. Name the mechanism or the number. A sentence that could sit in any project says nothing. Cut it.
+
+## Reader load
+
+Seven patterns that slow readers down. The full examples and fixes live in `reader-load.md`.
+
+- **B23** Rare pairs: two words that rarely appear together. Rewrite the relationship in plain words.
+- **B24** Long gaps: the subject and its verb sit far apart. Move them together, or split the sentence.
+- **B25** Dropped connectors: a relative clause lost its "that" or "which". Put the connector back.
+- **B26** Tacked nouns: three or more nouns in a row. Add the small words that show the relations.
+- **B27** Nouns as verbs: a noun used as a verb. Write the verb phrase.
+- **B28** Things as people: an inanimate thing with a verb of a living being. State the need or the behavior plainly.
+- **B29** Flipped roles: the tool acts and the human receives. Make the human the actor.

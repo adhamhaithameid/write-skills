@@ -234,3 +234,14 @@ STE, AI-PATTERNS, TERSE, COMPRESS, DOCS, COPY-EDIT, COPY-WRITE, AGENT-DOCS, WORK
 - Add or change a rule here first. Then change the skill files.
 - Keep IDs stable. Do not reuse the ID of a deleted rule.
 
+
+## B. Reader load (write-better)
+
+- **B23** `core` Rare pairs: two words that rarely appear together. Rewrite the relationship in plain words. (source: NYU/UT Austin study, 2026)
+- **B24** `core` Long gaps: the subject and its verb sit far apart. Move them together, or split the sentence. (source: same study)
+- **B25** `core` Dropped connectors: a relative clause lost its "that". Put the connector back. (source: same study)
+- **B26** `core` Tacked nouns: three or more nouns in a row. Add the small words that show the relations. (source: same study)
+- **B27** `core` Nouns as verbs: a noun used as a verb. Write the verb phrase. (source: same study)
+- **B28** `core` Things as people: an inanimate thing with a verb of a living being. State the need plainly. (source: same study)
+- **B29** `core` Flipped roles: the tool acts and the human receives. Make the human the actor. (source: same study, user naming)
+- **B30** `core` No announced structure, no section ceremony under 3 sections, no closing summary except the short end-of-turn block. (source: anti-homework rules)

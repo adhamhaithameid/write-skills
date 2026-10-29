@@ -1,0 +1,27 @@
+{
+  "skill_name": "write-tldr",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "You just wrote a 60-line answer about a database migration: steps, rollback notes, risks. End the turn as the user expects, with the short block. Result: run scripts/migrate-login.ts once then deploy. Rollback possible before the next release. You also noticed queue.py double-counts failures.",
+      "expected_output": "A TLDR block of 3 lines or fewer with the result and next step, plus a Found line for the queue.py fact. Nothing new invented.",
+      "assertions": [
+        "TLDR: line present, 3 lines or fewer",
+        "Found: line carries the queue.py fact",
+        "No new facts",
+        "No 'in summary' phrasing"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Answer this in 2 sentences: what does the retry helper do? Then decide: does this reply need the short block?",
+      "expected_output": "A 2-sentence answer with no block. Summarizing a short reply is noise.",
+      "assertions": [
+        "No TLDR block on a short reply",
+        "Answer first"
+      ],
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "skill_name": "help-write",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "The user pasted a stack trace and said 'tell the team what happened'. Which writing skill fits?",
+      "expected_output": "Routes to the report skill in one line with the reason, then follows it.",
+      "assertions": [
+        "Names one skill",
+        "Reason in a few words",
+        "Does not write the deliverable itself"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "The user is just chatting about ideas, no deliverable yet. Which skill fits?",
+      "expected_output": "Routes to the general skill: no deliverable found.",
+      "assertions": [
+        "Names the general skill",
+        "One line"
+      ],
+      "files": []
+    }
+  ]
+}
