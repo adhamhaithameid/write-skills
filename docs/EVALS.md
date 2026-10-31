@@ -36,3 +36,7 @@ The cases live in `skills/<name>/evals/evals.json`. Run a case with two fresh ag
 - The negative-trigger routing test for the 22-skill set is pending. The provider refused the subagent dispatch three times. The fixture, with expected answers, is saved in docs/ROUTING-TEST.md. Run it before adding a twenty-third skill and after any description change.
 - Eval cases are written for all seven new skills. None has run yet.
 - Name check on skills.sh: write-tldr, write-again, help-write, write-adr, write-prd, write-ste, and write-better are free. write-plan exists under another owner and is kept under the owner-namespacing policy.
+
+## 30 to 31 October 2026, the full experiment
+
+All 22 skills ran with and without their rules on the subagent channel, prompt only, no tools. 13 clear passes, 9 thin passes, 0 failures. OpenCode on beam-free confirmed in-host firing and the local-rules step, but its control arms auto-fired the skills, so that channel is qualitative only. Full pairs and verdicts: docs/EXPERIMENT.md. beam-free is unfit for graded runs; it duplicated answers across turns.

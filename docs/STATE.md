@@ -71,6 +71,7 @@ skills.sh: write-tldr, write-again, help-write, write-adr, write-prd, write-ste,
 ## Open work
 
 - Run the eval cases for the new skills and record verdicts in docs/EVALS.md.
+- The full before-and-after experiment is in docs/EXPERIMENT.md: 13 clear passes, 9 thin passes, 0 failures over 22 skills.
 - Keep the negative-trigger routing test green before adding a twenty-third skill.
 - npm publish 0.4.0 (user, after npm login).
 - Delete the old private repo github.com/adhamhaithameid/writing-skills (user).
