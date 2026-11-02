@@ -40,3 +40,16 @@ The cases live in `skills/<name>/evals/evals.json`. Run a case with two fresh ag
 ## 30 to 31 October 2026, the full experiment
 
 All 22 skills ran with and without their rules on the subagent channel, prompt only, no tools. 13 clear passes, 9 thin passes, 0 failures. OpenCode on beam-free confirmed in-host firing and the local-rules step, but its control arms auto-fired the skills, so that channel is qualitative only. Full pairs and verdicts: docs/EXPERIMENT.md. beam-free is unfit for graded runs; it duplicated answers across turns.
+
+## 7 November 2026, the 22-skill routing test
+
+Method: the fixture in docs/ROUTING-TEST.md, two runs per part, four fresh subagents, prompt only. The prompts went verbatim.
+
+| Part | Run | Verdicts | Result |
+|---|---|---|---|
+| A, should fire | 1 | 9 of 10 | One over-fire: task 10, "Which skill should I use to describe this endpoint to the team?" fired write-docs; expected help-write. |
+| A, should fire | 2 | 9 of 10 | One over-fire: task 5, "Run the test suite and report failures", fired write-report; expected none. |
+| B, should not fire | 1 | 10 of 10 | No misfires. |
+| B, should not fire | 2 | 10 of 10 | No misfires. |
+
+Total: 38 of 40 verdicts correct. The negative-trigger test is green in both runs, so the gate for a twenty-third skill is open. The two part-A misses are over-fires, not missed triggers: no skill failed to fire when it should. Both sit near a real boundary. Task 10 is a meta-question about skill choice; help-write owns it, and write-docs guessed. Task 5 asks for a report of failures; write-report read "report" in the prompt. No description change is planned, so no rerun is required.

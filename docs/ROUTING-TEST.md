@@ -56,3 +56,4 @@ Expected: OK for all ten.
 
 - 2026-10-24: 8 descriptions, should-fire only, 16 of 16 over two samples. Recorded in docs/EVALS.md.
 - 2026-10-29: the 22-skill run is pending. The provider refused the subagent dispatch three times in a row. Run the two prompts above and record the verdicts in docs/EVALS.md.
+- 2026-11-07: the 22-skill run is complete. Four fresh subagents, two runs per part, prompts verbatim. 38 of 40 verdicts correct. Part B is clean in both runs: no misfires, so the negative-trigger gate is green. The two part-A misses are over-fires near real boundaries: task 10 fired write-docs instead of help-write, and task 5 fired write-report. Verdict table in docs/EVALS.md. No description change is planned, so no rerun is required.
