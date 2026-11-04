@@ -1,4 +1,4 @@
-# Set state, 2026-10-29
+# Set state, 2026-11-07
 
 The one file that records what this set is. Update it in the same commit as any set change. The mission: the reading experience must never feel like hell.
 
@@ -44,8 +44,10 @@ Evidence notes: four behaviors carry graded run evidence in docs/EVALS.md. They 
 - `README.md`: the visitor page. Mission, skill table, three example pairs, install.
 - `docs/BLOCKS.md`: the manifest and the set-size cap.
 - `docs/RULES.md`: the rule register with stable IDs, A1 to B30.
-- `docs/EVALS.md`: the behavior evidence and the routing-test method.
+- `docs/EVALS.md`: the behavior evidence and the routing-test results.
 - `docs/AUDIT.md`: the 24-check rubric scores per skill.
+- `docs/EXPERIMENT.md`: the full before-and-after run over all 22 skills.
+- `docs/ROUTING-TEST.md`: the routing fixture with prompts and expected answers.
 - `docs/examples.md`: the before-and-after gallery.
 - `docs/STATE.md`: this file.
 
@@ -56,14 +58,16 @@ Evidence notes: four behaviors carry graded run evidence in docs/EVALS.md. They 
 - 0.2.1: Fibonacci story points with the effort, complexity, uncertainty model.
 - 0.3.0: seven more skills (review, release, issue, summary, handoff, report, glossary), local-rules step in every skill, examples everywhere, 24-check audit.
 - 0.3.1: rich styling rules in write-better, write-docs, write-pr.
-- 0.4.1: store-front polish in the README, npm description and keywords.
-- 0.4.0: seven new skills, write-core renamed to write-better, reader-load rules, docs/STATE.md.
+- 0.4.0 (2026-10-29): seven new skills, write-core renamed to write-better, reader-load rules, docs/STATE.md, routing fixture.
+- 0.4.1 (2026-10-29): store-front polish, grouped skill table, badges, why section, npm description and keywords fix.
+- Experiment (2026-10-30 to 31): all 22 skills before-and-after on the subagent channel. 13 clear passes, 9 thin passes, 0 failures. Full pairs in docs/EXPERIMENT.md.
+- Routing test (2026-11-07): the 22-skill fixture ran with four fresh subagents. 38 of 40 verdicts correct; part B clean in both runs. Verdicts in docs/EVALS.md.
 
 ## Published channels
 
 - GitHub: github.com/adhamhaithameid/write-skills
 - skills.sh: skills.sh/adhamhaithameid/write-skills
-- npm: write-skills (0.3.0 live at the time of writing; publish 0.4.1 after `npm login`)
+- npm: write-skills (0.3.0 live at the time of writing; the npm token expired. Publish 0.4.1 after `npm login`.)
 
 ## Name check, 2026-10-29
 
@@ -71,11 +75,13 @@ skills.sh: write-tldr, write-again, help-write, write-adr, write-prd, write-ste,
 
 ## Open work
 
-- Run the eval cases for the new skills and record verdicts in docs/EVALS.md.
-- The full before-and-after experiment is in docs/EXPERIMENT.md: 13 clear passes, 9 thin passes, 0 failures over 22 skills.
-- Keep the negative-trigger routing test green before adding a twenty-third skill.
-- npm publish 0.4.1 (user, after npm login).
+- npm publish 0.4.1 (user, after `npm login`; the token expired).
 - Delete the old private repo github.com/adhamhaithameid/writing-skills (user).
+
+## Done, for the record
+
+- Eval evidence for all 22 skills: docs/EXPERIMENT.md, 13 clear passes, 9 thin passes, 0 failures.
+- Routing test (2026-11-07): 38 of 40 verdicts correct, part B clean in both runs. Recorded in docs/EVALS.md and docs/ROUTING-TEST.md. The negative-trigger gate for a twenty-third skill is green.
 
 ## Held for later
 
