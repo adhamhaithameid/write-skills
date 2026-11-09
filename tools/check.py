@@ -3,6 +3,8 @@
 
 Run:  python3 tools/check.py
 Fix:  python3 tools/check.py --fix-shared   (copy shared/ste.md into every skill)
+Lint: python3 tools/check.py --lint FILE... [--commit-msg]
+      (lint any file against the STE rules; --commit-msg skips comment lines)
 Exit code 0 means all checks pass. Exit code 1 means at least one check failed.
 """
 import json
@@ -520,8 +522,37 @@ def fix_shared(repo):
             print(f"synced {dest.relative_to(repo)}")
 
 
+def lint_cli(args):
+    """Lint named files. --commit-msg drops the # comment lines first."""
+    commit_msg = "--commit-msg" in args
+    names = [a for a in args if a != "--commit-msg"]
+    if not names:
+        print("usage: python3 tools/check.py --lint FILE... [--commit-msg]")
+        return 2
+    findings = 0
+    for name in names:
+        p = Path(name)
+        text = read_text(p)
+        if text is None:
+            print(f"FAIL [lint] {p}: cannot read the file")
+            findings += 1
+            continue
+        if commit_msg:
+            text = "\n".join(l for l in text.split("\n") if not l.lstrip().startswith("#"))
+        for n, rule, msg in lint_text(text):
+            print(f"FAIL [lint:{rule}] {p}:{n} {msg}")
+            findings += 1
+    if findings:
+        print(f"\n{findings} finding(s).")
+        return 1
+    print(f"{len(names)} file(s) clean.")
+    return 0
+
+
 def main(argv):
     repo = Path(__file__).resolve().parent.parent
+    if argv and argv[0] == "--lint":
+        return lint_cli(argv[1:])
     if "--fix-shared" in argv:
         fix_shared(repo)
     fails = run_checks(repo)

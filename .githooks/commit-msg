@@ -1,0 +1,5 @@
+#!/bin/sh
+# STE check on the commit message. Findings fail the commit.
+# Install once per clone:
+#   ln -s "$PWD/hooks/commit-msg" .git/hooks/commit-msg
+python3 "$(git rev-parse --show-toplevel)/tools/check.py" --lint --commit-msg "$1"

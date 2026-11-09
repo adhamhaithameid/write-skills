@@ -9,7 +9,13 @@ python3 tools/check.py
 python3 -m unittest discover -s tests
 ```
 
-To run them on every commit, run `git config core.hooksPath .githooks` once.
+To run them on every commit, run `git config core.hooksPath .githooks` once. The `commit-msg` hook in that folder then runs the STE lint on your commit message and fails the commit on a finding.
+
+You can lint any file on demand:
+
+```
+python3 tools/check.py --lint FILE
+```
 
 ## Rules for edits
 
@@ -22,5 +28,6 @@ To run them on every commit, run `git config core.hooksPath .githooks` once.
 - Keep each skill alone. Do not name another skill inside a skill folder.
 - Keep every skill auto-invoked. Do not add `disable-model-invocation`.
 - Keep private data out of the repo. Add new private names to `tools/blocklist.txt`.
-- Write the files that this repo authors in Simplified Technical English. The file `tools/config.json` lists these files.
+- Write the files that this repo authors in Simplified Technical English. The file `tools/config.json` lists these files. The lint checks the mechanical rules: banned words and phrases, the 25-word cap (20 words in numbered steps), passive voice, and "-ing" verbs. It also catches contractions, dashes, and curly quotes.
+- A line that carries `<!-- ste:ok: reason -->` is exempt from the lint. Use it only when a rule allows the text, for example a passive with an unknown actor. Write the reason beside the marker.
 - Use `docs/RULES.md` as the register of rules. Add a rule there first.
