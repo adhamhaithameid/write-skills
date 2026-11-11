@@ -6,28 +6,28 @@ The one file that records what this set is. Update it in the same commit as any 
 
 | Skill | Role | Trigger | Lines | Example | Eval cases |
 |---|---|---|---|---|---|
-| write-better | Chat answers, explanations, notes | Auto, on any prose task | 171 | yes | 3 |
+| write-better | Chat answers, explanations, notes | Auto, on any prose task | 172 | yes | 3 |
 | write-compact | The whole reply stays short | Auto, or "brief mode" | 69 | yes | 3 |
 | write-tldr | Short block at the end of a long answer | Auto, past 30 lines | 59 | yes | 2 |
 | write-again | Rewrite, explain again, refresh a stale doc | Auto, on "again" or "wait what" | 72 | yes | 2 |
 | help-write | In-chat router to the right skill | On request | 71 | yes | 2 |
-| write-docs | Docs for humans and for agents | Auto, on doc tasks | 115 | yes | 3 |
+| write-docs | Docs for humans and for agents | Auto, on doc tasks | 122 | yes | 3 |
 | write-pr | PR title and body with evidence | Auto, on PR text | 119 | yes | 3 |
-| write-commit | Commit message from diff and history | Auto, on commit text | 54 | yes | 3 |
+| write-commit | Commit message from diff and history | Auto, on commit text | 55 | yes | 3 |
 | write-comments | Code comments: intent, constraints, traps | Auto, on comment edits | 60 | yes | 2 |
-| write-review | Review comments: location, problem, fix | Auto, on review requests | 57 | yes | 2 |
+| write-review | Review comments: location, problem, fix | Auto, on review requests | 58 | yes | 2 |
 | write-jira | Jira epics, stories, points (Fibonacci) | Auto, on Jira text | 129 | yes | 3 |
 | write-issue | GitHub issues with repro steps | Auto, on issue text | 67 | yes | 2 |
-| write-release | Release notes from git history | Auto, on release text | 58 | yes | 2 |
+| write-release | Release notes from git history | Auto, on release text | 59 | yes | 2 |
 | write-report | Reports: answer first, evidence after | Auto, on report requests | 81 | yes | 2 |
 | write-summary | Summaries that keep decisions and owners | Auto, on summarize | 59 | yes | 2 |
 | write-handoff | Handoff notes for a fresh session | Auto, on handoff | 86 | yes | 2 |
-| write-plan | Plans before work starts | Auto, on plan requests | 74 | yes | 2 |
+| write-plan | Plans before work starts | Auto, on plan requests | 75 | yes | 2 |
 | write-adr | Architecture decision records (Nygard) | Auto, on ADR requests | 102 | yes | 2 |
 | write-prd | Product requirements with metrics | Auto, on PRD requests | 81 | yes | 2 |
 | write-longform | Staged long-form mission | Explicit request | 98 | yes | 2 |
-| write-glossary | One term per concept | Auto, on glossary work | 57 | yes | 2 |
-| write-ste | Enforce STE, violations named by rule | Auto, on "ste" | 61 | yes | 2 |
+| write-glossary | One term per concept | Auto, on glossary work | 58 | yes | 2 |
+| write-ste | Enforce STE, violations named by rule | Auto, on "ste" | 63 | yes | 2 |
 
 Line counts and the Example column reflect the files at the enforcement update (2026-11-16). Every skill carries an example, in the skill file, in `docs/examples.md`, or in both.
 
@@ -62,7 +62,7 @@ Evidence notes: four behaviors carry graded run evidence in docs/EVALS.md. They 
 - 0.3.1: rich styling rules in write-better, write-docs, write-pr.
 - 0.4.0 (2026-10-29): seven new skills, write-core renamed to write-better, reader-load rules, docs/STATE.md, routing fixture.
 - 0.4.1 (2026-10-29): store-front polish, grouped skill table, badges, why section, npm description and keywords fix.
-- Experiment (2026-10-30 to 31): all 22 skills before-and-after on the subagent channel. 13 clear passes, 9 thin passes, 0 failures. Full pairs in docs/EXPERIMENT.md.
+- Experiment (2026-10-30 to 31): all 22 skills before-and-after on the subagent channel. 14 clear passes, 8 thin passes, 0 failures. Full pairs in docs/EXPERIMENT.md.
 - Routing test (2026-11-07): the 22-skill fixture ran with four fresh subagents. 38 of 40 verdicts correct; part B clean in both runs. Verdicts in docs/EVALS.md.
 - Enforcement (2026-11-16): the lint gained the step cap, passive voice, and "-ing" verb checks. It also covers docs/EXPERIMENT.md. The reader-load rules moved from B23-B30 to N1 to N8.
 
@@ -83,7 +83,7 @@ skills.sh: write-tldr, write-again, help-write, write-adr, write-prd, write-ste,
 
 ## Done, for the record
 
-- Eval evidence for all 22 skills: docs/EXPERIMENT.md, 13 clear passes, 9 thin passes, 0 failures.
+- Eval evidence for all 22 skills: docs/EXPERIMENT.md, 14 clear passes, 8 thin passes, 0 failures.
 - Routing test (2026-11-07): 38 of 40 verdicts correct, part B clean in both runs. Recorded in docs/EVALS.md and docs/ROUTING-TEST.md. The negative-trigger gate for a twenty-third skill is green.
 
 ## Held for later

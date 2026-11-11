@@ -93,6 +93,13 @@ When an agent reads the document, add the scan rules. Skill files and agent inst
 
 For the full agent-doc standard, open `references/agent-docs.md`.
 
+## Check before you send
+
+- Did you name the job, and does every section serve it?
+- Does every step read as a command, with its gate before the action?
+- Are the symbols, paths, and commands real, and taken from the codebase?
+- Read the page once more. Does a tired engineer understand it at the first read?
+
 ## Worked example
 
 Before:

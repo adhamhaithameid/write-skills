@@ -23,6 +23,8 @@ The rules govern prose: chat replies, commit messages, PR descriptions, docs, re
 
 ## Check
 
+When the repo carries this toolset, run the mechanical lint first: `python3 tools/check.py --lint FILE`. It names its findings by rule: sentence-length, step-length, passive, progressive, contraction, dash, curly-quote, banned-word, banned-phrase, title-case. Fix those, then judge the rest.
+
 Run the compliance checklist on the text:
 
 1. Every sentence 25 words or fewer, and 20 or fewer in instructions?

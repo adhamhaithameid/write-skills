@@ -32,6 +32,7 @@ The repo convention wins over any default. When the history writes "Area: change
 - Add a body only for what the diff cannot show: a why, a migration path, a linked ticket.
 - A breaking change, a security fix, a data migration, and a revert always get a body.
 - Keep file narration out. The diff lists files.
+- Name a ticket only when the branch, the diff, or the request carries it. Never invent a number.
 - No tool attribution, unless a repo rule requires a trailer.
 
 ## Output

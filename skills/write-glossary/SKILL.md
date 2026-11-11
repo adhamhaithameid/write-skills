@@ -28,7 +28,8 @@ Use the exact term of the glossary for each concept. A local rule beats a rule i
 - One entry per term: the term, the meaning in one sentence, and where it is used.
 - Keep the format the repo already uses. Start a table format when none exists.
 - Prefer the term the code already uses. A rename is a proposal, never a silent change.
-- Mark a disputed term as proposed, and add one open question line under it.
+- Every definition comes from the repo text. Name where the term lives.
+- Mark a disputed term as proposed, and add one open question line under it. Mark a term the repo never defines as proposed too.
 - List the synonyms you merged, so old text stays searchable.
 
 ## Never

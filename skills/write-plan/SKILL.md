@@ -35,6 +35,7 @@ Write the sections in this order. Skip a section when it has nothing to say.
 - Every number carries its unit and its source. Never invent a baseline.
 - Write the plan for the approver. A busy engineer reads it in five minutes.
 - Mark every assumption. An unmarked assumption becomes a surprise.
+- End the plan with one question: "Which approach do I build?" Do not start until the answer comes.
 - This skill writes text only. It never starts the work, writes code, or moves a ticket.
 
 ## Example

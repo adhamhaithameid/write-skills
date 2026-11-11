@@ -39,7 +39,7 @@ One control arm went off prompt and investigated the real repository with tools.
 | write-glossary | Thin pass | One tight line, no invented features |
 | write-ste | Thin pass | A definition point and a length check on top of an already good control |
 
-Score: 13 clear passes, 9 thin passes, 0 failures.
+Score: 14 clear passes, 8 thin passes, 0 failures. The count comes from the verdict table above; an earlier line here said 13 and 9, and that count was wrong.
 
 ## Before and after, channel 1
 

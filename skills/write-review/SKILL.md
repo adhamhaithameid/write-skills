@@ -27,8 +27,9 @@ Use the exact term of the glossary for each concept. A local rule beats a rule i
 
 - One finding per line: location, problem, fix. Format: `path:line problem. fix.`
 - Mark a severity only when it helps: bug, risk, nit, question.
+- Quote the code line behind a bug or a risk. No quoted line, no severity; drop the finding to a question.
 - Report only what this diff owns. Pre-existing style goes in one separate note at the end, or nowhere.
-- State what you could not check. A question is a question.
+- End with the not-checked list. Name every file, path, or test you did not read. A question is a question.
 - No praise line, no summary of the diff, no restatement of what the code does.
 
 ## Never

@@ -29,6 +29,7 @@ Use the exact term of the glossary for each concept. A local rule beats a rule i
 - One sentence per change. Name the user-visible effect, never the file.
 - A breaking change carries its migration step in the same sentence or the next.
 - Drop internal noise: refactors, test-only changes, dependency bumps with no visible effect.
+- When the history does not explain an entry, list it under Changed as unknown, with the commit hash. Do not guess the effect.
 - Name the issue number when one exists.
 
 ## Never

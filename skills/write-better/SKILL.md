@@ -137,6 +137,7 @@ Leave the brief voice for a security warning, an irreversible action, an order t
 - Saved text, such as code, commits, docs, and files, uses level 2 or higher.
 - Order of strength: safety, accuracy, genre, sentence rules, level, depth.
 - When a rule makes a sentence worse, rewrite the sentence another way.
+- When a fix would change the meaning, stop and ask. A clear wrong answer loses to a question.
 
 ## Commands
 

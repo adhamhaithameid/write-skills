@@ -39,7 +39,7 @@ The cases live in `skills/<name>/evals/evals.json`. Run a case with two fresh ag
 
 ## 30 to 31 October 2026, the full experiment
 
-All 22 skills ran with and without their rules on the subagent channel, prompt only, no tools. 13 clear passes, 9 thin passes, 0 failures. OpenCode on beam-free confirmed in-host firing and the local-rules step, but its control arms auto-fired the skills, so that channel is qualitative only. Full pairs and verdicts: docs/EXPERIMENT.md. beam-free is unfit for graded runs; it duplicated answers across turns.
+All 22 skills ran with and without their rules on the subagent channel, prompt only, no tools. 14 clear passes, 8 thin passes, 0 failures. OpenCode on beam-free confirmed in-host firing and the local-rules step, but its control arms auto-fired the skills, so that channel is qualitative only. Full pairs and verdicts: docs/EXPERIMENT.md. beam-free is unfit for graded runs; it duplicated answers across turns.
 
 ## 7 November 2026, the 22-skill routing test
 
