@@ -48,6 +48,31 @@ Use these sections in this order. Skip a section that has nothing to say.
 - Say what you did not finish and why. A hidden gap costs the next reader a day.
 - Write for a reader who has no memory of this session.
 
+## Example
+
+Before:
+```text
+We fixed the login test this morning after chasing the flake for a while.
+The cache module might still be broken, someone should look at it. Next
+I wanted to open a PR but the push failed, not sure why. Most tests pass.
+```
+
+After:
+```text
+Where the work stands: repo writing-tools, branch fix/login-test, commit
+9c31aa. No pull request yet.
+
+Done: the login test waits for the session cookie. Proof: 214 tests pass.
+
+Verified: the test run. Not verified: the push failure, no diagnosis yet.
+
+Next steps:
+1. Retry the push and read the remote error.
+2. Open the pull request.
+
+Traps: do not touch the cache module. The flake there is a known issue.
+```
+
 ## Never
 
 This skill writes text only. It never commits, pushes, or opens a pull request.
