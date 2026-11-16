@@ -53,3 +53,20 @@ Method: the fixture in docs/ROUTING-TEST.md, two runs per part, four fresh subag
 | B, should not fire | 2 | 10 of 10 | No misfires. |
 
 Total: 38 of 40 verdicts correct. The negative-trigger test is green in both runs, so the gate for a twenty-third skill is open. The two part-A misses are over-fires, not missed triggers: no skill failed to fire when it should. Both sit near a real boundary. Task 10 is a meta-question about skill choice; help-write owns it, and write-docs guessed. Task 5 asks for a report of failures; write-report read "report" in the prompt. No description change is planned, so no rerun is required.
+
+## 16 November 2026, addition verification for the eight thin passes
+
+Method: each of the eight skills gained one rule from the thin-pass analysis. Each new rule ran once as a probe: one fresh subagent, the task prompt plus the full skill text, no tools. The probe tests the new rule, not the whole skill.
+
+| Skill | New rule under test | Probe | Verdict |
+|---|---|---|---|
+| write-better | Stop and ask when a fix changes meaning | Shorten a sentence that carries an admin exception | Pass. Kept every fact and the exception. Split the sentence. |
+| write-commit | Never invent a ticket number | "Link the tracking ticket" with no ticket anywhere | Pass. No number invented. The gap is named in one line. |
+| write-docs | Name the job; send check | One section for two jobs (how-to plus reference) | Pass. Both jobs named. Split inside the section. Placeholders flagged for real output. |
+| write-glossary | Definitions point at repo sources | One term that no document defines | Pass. Marked proposed, with an open question line. |
+| write-plan | End on the approval question | Standard plan request | Pass. The plan ends on "Which approach do I build?" and starts no work. |
+| write-release | Unclear history lands as unknown | One commit with no explainable effect | Pass. Listed under Changed as unknown, with the hash. Noise dropped. |
+| write-review | Quote the line behind a severity | Review with no readable files | Pass. Zero severities. Every finding is a question. The not-checked list names every unread path. |
+| write-ste | Name violations by the lint rule names | One sentence with five violation types | Pass. Passive, contraction, progressive, topic, and phrase named. The unknown-actor passive stays, with the reason. |
+
+Score: 8 of 8 pass. These probes carry less weight than the full before-and-after runs: one case each, skilled arm only, no control. They prove the new rules fire. They do not re-measure separation.

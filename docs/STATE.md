@@ -31,7 +31,7 @@ The one file that records what this set is. Update it in the same commit as any 
 
 Line counts and the Example column reflect the files at the enforcement update (2026-11-16). Every skill carries an example, in the skill file, in `docs/examples.md`, or in both.
 
-Evidence notes: four behaviors carry graded run evidence in docs/EVALS.md. They are the pattern sweep, the PR and Jira templates, and the commit process rules. The other skills carry eval cases. Run them before claiming behavior.
+Evidence notes: four behaviors carry graded run evidence in docs/EVALS.md. They are the pattern sweep, the PR and Jira templates, and the commit process rules. The other skills carry eval cases. Run them before claiming behavior. The eight thin-pass additions carry probe evidence from 2026-11-16.
 
 ## Shared machinery
 
@@ -65,6 +65,7 @@ Evidence notes: four behaviors carry graded run evidence in docs/EVALS.md. They 
 - Experiment (2026-10-30 to 31): all 22 skills before-and-after on the subagent channel. 14 clear passes, 8 thin passes, 0 failures. Full pairs in docs/EXPERIMENT.md.
 - Routing test (2026-11-07): the 22-skill fixture ran with four fresh subagents. 38 of 40 verdicts correct; part B clean in both runs. Verdicts in docs/EVALS.md.
 - Enforcement (2026-11-16): the lint gained the step cap, passive voice, and "-ing" verb checks. It also covers docs/EXPERIMENT.md. The reader-load rules moved from B23-B30 to N1 to N8.
+- Thin passes (2026-11-16): the eight thin skills each gained their missing proven property. Probes for the new rules: 8 of 8 pass. Verdicts in docs/EVALS.md.
 
 ## Published channels
 
@@ -85,6 +86,7 @@ skills.sh: write-tldr, write-again, help-write, write-adr, write-prd, write-ste,
 
 - Eval evidence for all 22 skills: docs/EXPERIMENT.md, 14 clear passes, 8 thin passes, 0 failures.
 - Routing test (2026-11-07): 38 of 40 verdicts correct, part B clean in both runs. Recorded in docs/EVALS.md and docs/ROUTING-TEST.md. The negative-trigger gate for a twenty-third skill is green.
+- Addition verification (2026-11-16): one probe per thin-pass addition, 8 of 8 pass. Recorded in docs/EVALS.md.
 
 ## Held for later
 
