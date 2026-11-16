@@ -36,14 +36,14 @@ Evidence notes: four behaviors carry graded run evidence in docs/EVALS.md. They 
 - `shared/ste.md`: the Simplified Technical English rules. Synced into every skill as `references/ste.md`. Enforced by `tools/check.py`.
 - `shared/local-rules.md`: the local-rules step. Synced into every skill as `references/local-rules.md`. Every skill reads AGENTS.md, CLAUDE.md, CONTRIBUTING.md, and GLOSSARY.md first. Local rules beat skill defaults.
 - `<!-- sync:NAME -->` markers: the brief voice, the sentence floor, and the local-rules block exist once in source and one identical copy in every skill. The check fails on drift.
-- `tools/check.py` + `tests/`: frontmatter, links, cross-references, sync regions, privacy blocklist, lint, noreply authors, sizes.
+- `tools/check.py` + `tests/`: frontmatter, links, cross-references, sync regions, privacy blocklist, lint, noreply authors, sizes. The lint enforces the mechanical STE rules: word and phrase bans, the 25-word cap (20 in numbered steps), passive voice, "-ing" verbs, contractions, dashes, curly quotes, and title case. A `<!-- ste:ok: reason -->` marker exempts one line.
 - `tools/blocklist.txt`: privacy guard. Allows the public handle, bans personal name parts and old names.
 
 ## Docs map
 
 - `README.md`: the visitor page. Mission, skill table, three example pairs, install.
 - `docs/BLOCKS.md`: the manifest and the set-size cap.
-- `docs/RULES.md`: the rule register with stable IDs, A1 to B30.
+- `docs/RULES.md`: the rule register with stable IDs, A to N, and the machine-check map.
 - `docs/EVALS.md`: the behavior evidence and the routing-test results.
 - `docs/AUDIT.md`: the 24-check rubric scores per skill.
 - `docs/EXPERIMENT.md`: the full before-and-after run over all 22 skills.
@@ -62,6 +62,7 @@ Evidence notes: four behaviors carry graded run evidence in docs/EVALS.md. They 
 - 0.4.1 (2026-10-29): store-front polish, grouped skill table, badges, why section, npm description and keywords fix.
 - Experiment (2026-10-30 to 31): all 22 skills before-and-after on the subagent channel. 13 clear passes, 9 thin passes, 0 failures. Full pairs in docs/EXPERIMENT.md.
 - Routing test (2026-11-07): the 22-skill fixture ran with four fresh subagents. 38 of 40 verdicts correct; part B clean in both runs. Verdicts in docs/EVALS.md.
+- Enforcement (2026-11-16): the lint gained the step cap, passive voice, and "-ing" verb checks. It also covers docs/EXPERIMENT.md. The reader-load rules moved from B23-B30 to N1 to N8.
 
 ## Published channels
 

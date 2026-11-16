@@ -88,7 +88,7 @@ The log text sits here, or a fenced block with a language tag.
 - State what the change does first. State why second.
 - Link long logs and dashboards. Do not paste them.
 - Name the risk honestly. A one-way door, a change that is hard to reverse, gets a warning line in the summary.
-- Write full sentences. This text is saved and read again later.
+- Write full sentences. Readers come back to this text later.
 - This block writes text only. It never opens, merges, comments on, or closes a pull request.
 
 ## Example

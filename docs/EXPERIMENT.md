@@ -148,9 +148,9 @@ Verdict: thin pass. Both cut the filler. The skilled arm puts the warning before
 
 ### write-pr
 
-Before (control): improvised sections — What, Why, Test, Rollback. No sketch. The risk framing is a rollback note.
+Before (control): improvised sections: What, Why, Test, Rollback. No sketch. The risk framing is a rollback note.
 
-After (skilled): the exact Summary, Evidence, Risk template, with a file sketch, a two-way door, and a blast radius line about shared clients behind one address.
+After (skilled): the exact Summary, Evidence, Risk template, with a file sketch, a two-way door, and a blast radius line. The line names the shared clients behind one address.
 
 Verdict: clear pass. The template is the product.
 
@@ -170,7 +170,7 @@ Verdict: thin pass. Both follow the repo format. The skilled body gives the why 
 
 ### write-comments
 
-Before (control): restated the code twice — "Read the protocol version from byte 0." and "Reject all versions except 2."
+Before (control): restated the code twice: "Read the protocol version from byte 0." and "Reject all versions except 2."
 
 After (skilled):
 ```js
@@ -202,7 +202,7 @@ Verdict: thin pass. Same substance; the skilled arm lands the format, the severi
 
 ### write-jira
 
-Before (control): layer slices — a data-model story, an endpoint story, one combined mobile story. Points mostly bare, though Fibonacci appeared.
+Before (control): layer slices: a data-model story, an endpoint story, one combined mobile story. Points mostly bare, though Fibonacci appeared.
 
 After (skilled): outcome epic with out-of-scope, three vertical stories, testable checkboxes, blocking edges, and points with effort, complexity, and uncertainty reasons.
 
@@ -228,7 +228,7 @@ Verdict: thin pass. The control is close; the skill enforces the drop.
 
 Before (control): invented an event. "We rolled back 2.6 and latency returned to the old value." The prompt said only that a rollback restores the old plan.
 
-After (skilled): answer first, every evidence line labeled observed or inferred, a confidence statement, and a risk the control missed: the plan count could come from stale statistics instead of the PR.
+After (skilled): answer first, every evidence line labeled observed or inferred, a confidence statement, and one missed risk. The risk: the plan count could come from stale statistics instead of the PR.
 
 Verdict: clear pass. The fabrication is exactly what the labels prevent. One honest note: the skilled arm labeled one line "observed; source: post-rollback test" with a source the prompt never gave. The labels help; they do not replace judgment.
 
@@ -250,9 +250,9 @@ Verdict: clear pass. The labeling discipline is the product.
 
 ### write-plan
 
-Before (control): a strong plan — approach, steps with checkable results, rollback, risks. No marked option among alternatives, no out-of-scope, no source labels.
+Before (control): a strong plan: approach, steps with checkable results, rollback, risks. No marked option among alternatives, no out-of-scope, no source labels.
 
-After (skilled): source and assumption labels on every fact, three options each with cost, risk, and what it buys, a recommended pick with the reason, steps that each end on a check, risks with early signs, and an out-of-scope list.
+After (skilled): source and assumption labels on every fact, three options each with cost, risk, and what it buys, a recommended pick with the reason. Steps each end on a check. Risks carry early signs. An out-of-scope list closes the plan.
 
 Verdict: thin pass. The control was already good; the skill adds the approval-facing honesty layer.
 
@@ -260,7 +260,7 @@ Verdict: thin pass. The control was already good; the skill adds the approval-fa
 
 Before (control): a five-line record. Decision, reason, rejected options. No status, no consequences, no number.
 
-After (skilled): the full record — status, context with the numbers and the rejected options with reasons, a one-sentence decision, and consequences that name the costs: a new dependency, a network hop, an outage mode.
+After (skilled): the full record with status, context with the numbers, rejected options with reasons, and a one-sentence decision. The consequences name the costs: a new dependency, a network hop, an outage mode.
 
 Verdict: clear pass. The consequences section is the part teams skip.
 
@@ -284,7 +284,7 @@ Verdict: clear pass. The approval gate held.
 
 Before (control): a solid entry, but it invented features: "It also handles authentication, rate limits, and response formatting."
 
-After (skilled): one table line — term, definition from the given facts only, merged synonyms with their sources.
+After (skilled): one table line: term, definition from the given facts only, merged synonyms with their sources.
 
 Verdict: thin pass. Tighter, and nothing invented.
 
@@ -337,5 +337,5 @@ The model returned a duplicated answer on one run: the write-plan skilled slot r
 ## What the experiment changed
 
 1. The eval method now has two validated channels, and the prompt-only constraint is part of the fixture.
-2. In-host firing is proven on OpenCode. The remaining unknown is firing inside this coding agent's own host, which the provider blocked during this experiment.
+2. In-host firing is proven on OpenCode. Firing inside this coding agent's own host stays unproven. The provider blocked the dispatch during this experiment.
 3. The thin passes point at one truth: the machine's global STE rules already lift every control arm. The skills earn their keep where they own a format, gate an approval, or forbid fabrication.

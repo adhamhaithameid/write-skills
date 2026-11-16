@@ -24,6 +24,7 @@ STE, AI-PATTERNS, TERSE, COMPRESS, DOCS, COPY-EDIT, COPY-WRITE, AGENT-DOCS, WORK
 - Gaps in the AI-PATTERNS numbers are deliberate. The upstream list removed those rules. Do not fill the gaps.
 - A rule marked "merged into" is gone. Its meaning lives in the rule named.
 - Rule A21 stays. It comes from a project output style and applies to final reports.
+- The reader-load rules carried the IDs B23 to B30 until 2026-11-16. Those IDs had belonged to older, merged rules, so the live rules moved to N1 to N8. The B23 to B28 lines under Merged rules describe the older rules.
 
 ---
 
@@ -229,19 +230,36 @@ STE, AI-PATTERNS, TERSE, COMPRESS, DOCS, COPY-EDIT, COPY-WRITE, AGENT-DOCS, WORK
 - G9 merged into B18.
 - H1 merged into C1.
 
+## Machine checks
+
+`tools/check.py` enforces a subset of these rules on the files in `tools/config.json`:
+
+- A3: `sentence-length` (25 words) and `step-length` (20 words in numbered steps)
+- A5: `passive` (be-verb plus a known past participle)
+- A8: `progressive` (be-verb plus an "-ing" verb)
+- A13: `contraction`
+- B3, B18: `banned-word`, `banned-phrase`
+- B9: `dash`
+- B13: `title-case`
+- B15: `curly-quote`
+
+A line that carries `<!-- ste:ok: reason -->` is exempt from the checks. Use it only when a rule allows the text, for example a passive with an unknown actor. Write the reason beside the marker.
+
+This register stays out of `lint_paths`. Each register line mirrors one upstream rule and keeps its density on purpose, so the sentence caps do not apply here.
+
 ## Change this register
 
 - Add or change a rule here first. Then change the skill files.
 - Keep IDs stable. Do not reuse the ID of a deleted rule.
 
 
-## B. Reader load (write-better)
+## N. Reader load (write-better)
 
-- **B23** `core` Rare pairs: two words that rarely appear together. Rewrite the relationship in plain words. (source: NYU/UT Austin study, 2026)
-- **B24** `core` Long gaps: the subject and its verb sit far apart. Move them together, or split the sentence. (source: same study)
-- **B25** `core` Dropped connectors: a relative clause lost its "that". Put the connector back. (source: same study)
-- **B26** `core` Tacked nouns: three or more nouns in a row. Add the small words that show the relations. (source: same study)
-- **B27** `core` Nouns as verbs: a noun used as a verb. Write the verb phrase. (source: same study)
-- **B28** `core` Things as people: an inanimate thing with a verb of a living being. State the need plainly. (source: same study)
-- **B29** `core` Flipped roles: the tool acts and the human receives. Make the human the actor. (source: same study, user naming)
-- **B30** `core` No announced structure, no section ceremony under 3 sections, no closing summary except the short end-of-turn block. (source: anti-homework rules)
+- **N1** `core` Rare pairs: two words that rarely appear together. Rewrite the relationship in plain words. (source: NYU/UT Austin study, 2026)
+- **N2** `core` Long gaps: the subject and its verb sit far apart. Move them together, or split the sentence. (source: same study)
+- **N3** `core` Dropped connectors: a relative clause lost its "that". Put the connector back. (source: same study)
+- **N4** `core` Tacked nouns: three or more nouns in a row. Add the small words that show the relations. (source: same study)
+- **N5** `core` Nouns as verbs: a noun used as a verb. Write the verb phrase. (source: same study)
+- **N6** `core` Things as people: an inanimate thing with a verb of a living being. State the need plainly. (source: same study)
+- **N7** `core` Flipped roles: the tool acts and the human receives. Make the human the actor. (source: same study, user naming)
+- **N8** `core` No announced structure, no section ceremony under 3 sections, no closing summary except the short end-of-turn block. (source: anti-homework rules)

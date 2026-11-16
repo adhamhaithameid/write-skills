@@ -21,7 +21,7 @@ Date: 24 October 2026. Method: one eval case per skill, run twice in fresh agent
 
 ## Reading
 
-- Every block now carries eval cases in its `evals/` folder. Cases for write-better and write-longform are written but not run.
+- Every block now carries eval cases in its `evals/` folder. Cases for write-better and write-longform exist. Nobody ran them.
 - The PR, Jira, and commit blocks change behavior in the intended direction. The commit value sits in the process rules, proven by the live-repo test: read the history first, let the repo convention win.
 - The compact block earns a partial pass. The docs and comments blocks show thin separation on one case each. The base model is already close, and the skill adds placement and ordering discipline.
 - Trigger routing is clean: 16 of 16 in two samples. This test shows the descriptions as written to a host. A real host injects them differently, so in-host firing stays unverified.
@@ -33,9 +33,9 @@ The cases live in `skills/<name>/evals/evals.json`. Run a case with two fresh ag
 
 ## 29 October 2026, 0.4.0
 
-- The negative-trigger routing test for the 22-skill set is pending. The provider refused the subagent dispatch three times. The fixture, with expected answers, is saved in docs/ROUTING-TEST.md. Run it before adding a twenty-third skill and after any description change.
-- Eval cases are written for all seven new skills. None has run yet.
-- Name check on skills.sh: write-tldr, write-again, help-write, write-adr, write-prd, write-ste, and write-better are free. write-plan exists under another owner and is kept under the owner-namespacing policy.
+- The negative-trigger routing test for the 22-skill set is pending. The provider refused the subagent dispatch three times. The fixture with expected answers sits in docs/ROUTING-TEST.md. Run it before adding a twenty-third skill and after any description change.
+- All seven new skills have eval cases. None ran yet.
+- Name check on skills.sh: write-tldr, write-again, help-write, write-adr, write-prd, write-ste, and write-better are free. write-plan exists under another owner. The owner-namespacing policy keeps it.
 
 ## 30 to 31 October 2026, the full experiment
 

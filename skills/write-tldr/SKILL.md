@@ -27,7 +27,7 @@ Found: <a fact you noticed but did not act on, one line each, or omit>
 ```
 
 1. TLDR holds the one thing the reader must leave with, plus the next step.
-2. Found holds what you saw on the way: a nearby bug, a stale doc, a better option you did not take. The reader decides. Omit the line when there is nothing.
+2. Found holds what you saw on the way. Examples: a nearby bug, a stale doc, a better option you did not take. The reader decides. Omit the line when there is nothing.
 3. New facts only. The block adds nothing that the body did not say.
 
 ## When to use it

@@ -86,7 +86,7 @@ A page can pass every rule and still read like a machine wrote it.
 When an agent reads the document, add the scan rules. Skill files and agent instruction files follow this mode.
 
 - Give every section a stable heading. The agent navigates by headings.
-- End every step on a condition that tells the agent the step is done. Make the condition checkable.
+- End every step on a condition that tells the agent the step is complete. Make the condition checkable.
 - State what the environment does not show: the reason for a choice, the trap, the convention.
 - Keep one meaning in one place. Do not restate a rule in a second section.
 - Prune stale lines on every edit. A wrong instruction costs more than a missing one.

@@ -6,14 +6,14 @@ The seven patterns come from a study of 14 language models by NYU and UT Austin 
 
 ## The seven patterns
 
-### B23. Rare pairs
+### N1. Rare pairs
 
 Two words that rarely appear together. The reader stops to work out the relationship.
 
 Before: "a reader-patience budget"
 After: "a limit on how long readers wait"
 
-### B24. Long gaps
+### N2. Long gaps
 
 The subject and its verb sit far apart. Working memory strains across the gap.
 
@@ -28,35 +28,35 @@ The default cache keeps the hottest entries in memory. It evicts them
 only when the budget runs out.
 ```
 
-### B25. Dropped connectors
+### N3. Dropped connectors
 
 A relative clause loses its "that" or "which". The reader must re-parse.
 
 Before: "the book the professor wrote"
 After: "the book that the professor wrote"
 
-### B26. Tacked nouns
+### N4. Tacked nouns
 
 Three or more nouns in a row. The reader guesses which word modifies which.
 
 Before: "horror movie soundtrack generator"
 After: "a generator for horror-movie soundtracks"
 
-### B27. Nouns as verbs
+### N5. Nouns as verbs
 
 A noun gets used as a verb.
 
 Before: "calendar it" / "let's architecture this"
 After: "put it in the calendar" / "let's design this"
 
-### B28. Things as people
+### N6. Things as people
 
 An inanimate thing gets a verb of a living being.
 
 Before: "The conversation is eating its own tail." / "The database wants more memory."
 After: "The argument repeats itself." / "The database needs more memory."
 
-### B29. Flipped roles
+### N7. Flipped roles
 
 The tool acts and the human receives. The reader came to act, not to be acted on.
 

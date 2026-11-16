@@ -25,6 +25,49 @@ BANNED_PHRASES = [
 ]
 EMAIL_OK = re.compile(r"@users\.noreply\.github\.com$")
 
+# Rule A3: 20 words max in instructions (numbered steps), 25 in description.
+STEP_MAX_WORDS = 20
+DESC_MAX_WORDS = 25
+
+# Rule A5: passive voice. Auxiliary plus a curated past-participle list.
+# The list is explicit, not an "ed|en" regex, so adjective look-alikes
+# ("based", "used to", "located", "related") do not fire. Extend it only
+# with verbs where the passive hides a real actor.
+PASSIVE_PARTICIPLES = [
+    "added", "archived", "arisen", "aborted", "backed", "banned", "begun",
+    "blocked", "blown", "born", "brought", "built", "cached", "cancelled",
+    "canceled", "caught", "changed", "chosen", "cloned", "committed",
+    "compiled", "completed", "compressed", "configured", "copied",
+    "created", "dealt", "decoded", "deleted", "denied", "deployed",
+    "disabled", "done", "downloaded", "drawn", "driven", "dropped",
+    "duplicated", "eaten", "enabled", "encoded", "encrypted", "executed",
+    "extracted", "fallen", "fetched", "flown", "forgotten", "generated",
+    "hidden", "ignored", "installed", "kept", "loaded", "logged", "made",
+    "merged", "migrated", "moved", "parsed", "paid", "printed", "published",
+    "pulled", "pushed", "raised", "rebuilt", "removed", "renamed",
+    "replaced", "restored", "retried", "reverted", "rewritten", "risen",
+    "rotated", "run", "saved", "scheduled", "sent", "serialized", "set",
+    "shipped", "shown", "signed", "skipped", "sold", "spoken", "staged",
+    "stolen", "stored", "synced", "tagged", "taken", "taught",
+    "uploaded", "validated", "verified", "written",
+]
+PASSIVE_RX = re.compile(
+    r"(?i)\b(?:is|are|was|were|be|been|being)\s+"
+    r"(" + "|".join(PASSIVE_PARTICIPLES) + r")\b"
+)
+
+# Rule A8: the "-ing" form of a verb. Detection is "be-verb plus -ing word"
+# (the progressive), so nouns like "bring", "during", or "coding" pass.
+# This allowlist holds the non-verb "-ing" words that still follow a
+# be-verb ("the result is something you can test").
+PROGRESSIVE_OK = [
+    "anything", "being", "ceiling", "clothing", "during", "everything",
+    "evening", "housing", "king", "missing", "morning", "nothing",
+    "offspring", "pending", "ring", "sibling", "siblings", "something",
+    "spring", "string", "strings", "thing", "things", "wing",
+]
+PROGRESSIVE_RX = re.compile(r"(?i)\b(?:is|are|was|were|be|been|being)\s+([a-z]+ing)\b")
+
 
 class Failure:
     def __init__(self, check, path, line, message):
@@ -95,10 +138,16 @@ def strip_examples(line):
 # ---------------------------------------------------------------- lint
 
 def lint_text(text):
-    """Return a list of (line_number, rule, message) for one authored file."""
+    """Return a list of (line_number, rule, message) for one authored file.
+
+    A line that carries the marker ``ste:ok`` (inside an HTML comment) is
+    exempt from every check. Use it only with the reason written beside it.
+    """
     found = []
     in_fence = False
     block, block_start = [], 0
+    step = False
+    ok_lines = set()
     lines = text.split("\n")
     if lines and lines[0].strip() == "---":
         for i in range(1, len(lines)):
@@ -107,18 +156,31 @@ def lint_text(text):
                 break
 
     def flush():
-        nonlocal block, block_start
+        nonlocal block, block_start, step
         if block:
             joined = " ".join(block)
             joined = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", joined)
             joined = strip_code_spans(joined)
+            joined = strip_examples(joined)
             joined = re.sub(r"[*_]{1,3}", "", joined)
+            joined = re.sub(r"<!--.*?-->", "", joined)
+            cap = STEP_MAX_WORDS if step else DESC_MAX_WORDS
+            rule = "step-length" if step else "sentence-length"
             for sentence in re.split(r"(?<=[.!?])\s+", joined):
                 words = re.findall(r"[\w'-]+", sentence)
-                if len(words) > 25:
-                    found.append((block_start, "sentence-length",
-                                  f"{len(words)} words: {' '.join(words[:8])} ..."))
+                if len(words) > cap:
+                    found.append((block_start, rule,
+                                  f"{len(words)} words; the cap is {cap}: {' '.join(words[:8])} ..."))
+                m = PASSIVE_RX.search(sentence)
+                if m:
+                    found.append((block_start, "passive",
+                                  f"passive voice '{m.group(0)}': name the actor or write active (rule A5)"))
+                m = PROGRESSIVE_RX.search(sentence)
+                if m and m.group(1).lower() not in PROGRESSIVE_OK:
+                    found.append((block_start, "progressive",
+                                  f"-ing verb '{m.group(0)}': use a simple verb form (rule A8)"))
         block, block_start = [], 0
+        step = False
 
     for n, raw in enumerate(lines, 1):
         if raw.strip().startswith("```"):
@@ -128,9 +190,13 @@ def lint_text(text):
         if in_fence:
             continue
         if raw.lstrip().startswith("<!--"):
+            if "ste:ok" in raw:
+                ok_lines.add(n)
             flush()
             continue
-        stripped = strip_code_spans(raw)
+        if "ste:ok" in raw:
+            ok_lines.add(n)
+        stripped = strip_examples(raw)
         if re.search(r"[\u2014\u2013]", stripped):
             found.append((n, "dash", "em dash or en dash: use a period, a comma, or a hyphen"))
         if re.search(r"[\u201c\u201d\u2018\u2019]", stripped):
@@ -158,12 +224,13 @@ def lint_text(text):
             continue
         if re.match(r"^\s*([-*]|\d+\.)\s+", raw):
             flush()
+            step = bool(re.match(r"^\s*\d+\.\s+", raw))
             raw = re.sub(r"^\s*([-*]|\d+\.)\s+", "", raw)
         if not block:
             block_start = n
         block.append(raw.strip())
     flush()
-    return found
+    return [(n, rule, msg) for n, rule, msg in found if n not in ok_lines]
 
 
 # ---------------------------------------------------------------- reference forms

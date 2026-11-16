@@ -33,9 +33,9 @@ Rubric: the 24-check skill checklist. Each check scores 0, 1, or 2. Weighted tot
 
 ## Weakest checks, set wide
 
-- Check 6, completion criteria. Steps say what to do, but few say how the agent knows the step is done. Scored 1 across the set.
+- Check 6, completion criteria. Steps say what to do, but few say how the agent knows the step is complete. Scored 1 across the set.
 - Check 21, trigger tests both ways. The routing test covers the should-fire direction only. The seven new skills have no trigger evidence yet. New skills scored 0.
-- Check 24, real-host tests. Installs are verified, behavior inside a host is not.
+- Check 24, real-host tests. Installs pass verification. Behavior inside a host has no check.
 - Check 3, scope boundary in the description. Most descriptions state when to fire, not when not to. Scored 1, except write-longform.
 
 ## Next actions, in order of weight

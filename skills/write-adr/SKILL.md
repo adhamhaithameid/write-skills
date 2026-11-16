@@ -19,7 +19,7 @@ Use the exact term of the glossary for each concept. A local rule beats a rule i
 
 ## Read first
 
-1. Ask what decision was made, and when. Get the date.
+1. Ask the user what they decided, and when. Get the date.
 2. Collect the forces: the constraints, the options the team considered, and the facts that ruled them out.
 
 ## Structure

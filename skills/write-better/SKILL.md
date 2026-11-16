@@ -86,7 +86,7 @@ Reading the reply must never feel like homework. Reply like a colleague at a des
 3. No closing summary, except a short block at the end of a long turn.
 4. Prose carries the argument. Bullets carry true lists.
 5. Vary the sentence length. A short sentence lands a point.
-6. Fix the seven reader-slowing patterns: rare pairs, long gaps, dropped connectors, tacked nouns, nouns as verbs, things as people, flipped roles.
+6. Fix the seven reader-slowing patterns. The patterns: rare pairs, long gaps, dropped connectors, tacked nouns, nouns as verbs, things as people, flipped roles.
 
 The full fixes and examples live in `references/reader-load.md`.
 

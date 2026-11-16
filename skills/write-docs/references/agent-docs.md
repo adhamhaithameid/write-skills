@@ -37,11 +37,11 @@ Push too little down and the top bloats. Push too much down and you hide materia
 
 ## Completion criteria
 
-Every step ends on a condition that tells the agent the step is done.
+Every step ends on a condition that tells the agent the step is complete.
 
 - Make the condition checkable: can the agent tell done from not done?
 - Make the condition demanding: "account for every changed model" forces thorough work. "List the changes" does not.
-- A vague bound invites an early stop. Sharpen the bound first. Only a bound that cannot be made sharp justifies hiding the later steps behind a split.
+- A vague bound invites an early stop. Sharpen the bound first. A bound that resists sharpening justifies hiding the later steps behind a split.
 - A demanding criterion also binds flat reference: "apply every rule" holds a rule set to full coverage.
 
 ## Leading words

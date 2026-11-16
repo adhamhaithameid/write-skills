@@ -27,7 +27,7 @@ Keep the jobs apart. A reference table inside a tutorial stalls the lesson; a ho
 
 - Write to "you", in the now. Reserve "will" for events that truly sit in the future.
 - Give every action an owner: "the loader parses the file". The passive voice earns its place only when the doer is unknown or beside the point.
-- Steps are commands: "Click Submit." A step never "should be done"; it is done.
+- Steps are commands: "Click Submit." Never write "should be done". Write the command.
 - Put the gate before the action it guards, so a reader who does not qualify can jump past.
 - The normal path comes first. The exceptions wait below it.
 - Write like a colleague who knows the subject. Instructions skip "please". Procedures never claim to be "simple", "easy", or "quick"; a reader in a procedure is stuck, or they would not be there.
@@ -83,7 +83,7 @@ A page can pass every rule and still read like a machine wrote it. Every sentenc
 Markdown carries the structure. The devices, in order of strength:
 
 1. **Headings** carry the plan of the page. One h1, no skipped levels, sentence case.
-2. **Fenced code** with a language tag. Use a `diff` fence for a change to existing code, so the reader sees the shape of the change before its content.
+2. **Fenced code** with a language tag. Use a `diff` fence for a change to existing code. The reader then sees the shape of the change before its content.
 3. **Callouts** for what the reader must act on: note, tip, important, warning, caution, when the platform renders them. One callout carries one instruction.
 4. **Tables** for comparisons that share 2 or more properties. Three paragraphs of parallel facts become one table.
 5. **Bold lead-ins** only when the label names the item and the line adds new detail. A label that restates the line is noise.

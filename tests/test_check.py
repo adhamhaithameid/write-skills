@@ -33,6 +33,34 @@ class LintTests(unittest.TestCase):
         text = " ".join(["word"] * 30) + ".\n"
         self.assertIn("sentence-length", rules(text))
 
+    def test_numbered_step_over_20_words_fails(self):
+        step = "1. " + " ".join(["word"] * 21) + ".\n"
+        self.assertIn("step-length", rules(step))
+
+    def test_bullet_item_keeps_the_25_cap(self):
+        item = "- " + " ".join(["word"] * 21) + ".\n"
+        self.assertNotIn("step-length", rules(item))
+        self.assertNotIn("sentence-length", rules(item))
+
+    def test_passive_fails_but_active_passes(self):
+        self.assertIn("passive", rules("The file was deleted by the tool.\n"))
+        self.assertNotIn("passive", rules("The loader parses the file.\n"))
+
+    def test_state_participles_do_not_count_as_passive(self):
+        self.assertNotIn("passive", rules("The result is something you can test.\n"))
+        self.assertNotIn("passive", rules("Export is pending.\n"))
+
+    def test_progressive_fails_but_noun_ing_passes(self):
+        self.assertIn("progressive", rules("The tool is running the check now.\n"))
+        self.assertNotIn("progressive", rules("The result is something you can test.\n"))
+
+    def test_quoted_example_text_is_out_of_scope(self):
+        self.assertEqual(check.lint_text("Before: \"The tool is running the check now.\"\n"), [])
+
+    def test_ste_ok_marker_exempts_its_line(self):
+        text = "The file was deleted by the tool. <!-- ste:ok: actor unknown -->\n"
+        self.assertEqual(check.lint_text(text), [])
+
     def test_title_case_heading_fails(self):
         self.assertIn("title-case", rules("# Writing Style Slider\n"))
 
