@@ -1,5 +1,21 @@
 # Changelog
 
+## Unreleased
+
+- Enforcement: the lint checks the mechanical STE rules. It adds the 20-word cap in numbered steps, passive voice, and "-ing" verb checks, and it now covers docs/EXPERIMENT.md. A `<!-- ste:ok: reason -->` marker exempts one line, with the reason beside it.
+- New `--lint FILE` mode in tools/check.py, and a commit-msg hook in .githooks that fails a commit with a violation.
+- One addition per thin skill from the experiment:
+- write-better: stop and ask when a fix would change the meaning.
+- write-docs: a check before you send.
+- write-commit: never invent a ticket number.
+- write-review: quote the code line behind every severity. A mandatory not-checked list.
+- write-release: unclear history lands as unknown, with the hash.
+- write-plan: the plan ends on the approval question.
+- write-glossary: definitions point at repo sources.
+- write-ste: run the mechanical lint first.
+- Addition probes: 8 of 8 pass, recorded in docs/EVALS.md. The probes live as eval cases.
+- Rules register: the reader-load rules moved from B23-B30 to N1-N8. The old IDs had belonged to merged rules. The experiment score line is corrected to 14 clear passes, 8 thin passes.
+
 ## 0.4.1 - 2026-10-29
 
 - Store-front polish: badges, a why section, a quick start, the skill table grouped into four families, per-agent install, and a docs map in the README. The npm description and keywords now match the twenty-two-skill set.

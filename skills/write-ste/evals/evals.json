@@ -22,6 +22,19 @@
         "Command untouched"
       ],
       "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Check this text against STE: 'The deployment was completed by the pipeline and it's currently running the migration scripts which were generated last night, ensuring everything stays in sync.'",
+      "expected_output": "A rewrite that keeps the meaning, plus violations named by rule: passive, contraction, progressive, one topic per sentence, and the informal phrase.",
+      "assertions": [
+        "Violations named by rule",
+        "Passive named",
+        "Contraction named",
+        "Progressive named",
+        "Meaning kept"
+      ],
+      "files": []
     }
   ]
 }

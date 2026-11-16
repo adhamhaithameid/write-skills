@@ -22,6 +22,17 @@
         "No silent choice made"
       ],
       "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Build a glossary table. Facts: 'pipeline' is defined in docs/arch.md as the ingestion pipeline. 'gateway' is used in docs/api.md and readme for the API gateway. 'flux capacitor' appears in src/legacy/flux.py but no document defines it.",
+      "expected_output": "A table with sources named per entry, and flux capacitor marked proposed with an open question, not an invented definition.",
+      "assertions": [
+        "Undefined term marked proposed",
+        "Definitions name their sources",
+        "No invented definition"
+      ],
+      "files": []
     }
   ]
 }

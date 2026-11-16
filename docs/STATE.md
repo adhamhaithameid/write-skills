@@ -6,28 +6,28 @@ The one file that records what this set is. Update it in the same commit as any 
 
 | Skill | Role | Trigger | Lines | Example | Eval cases |
 |---|---|---|---|---|---|
-| write-better | Chat answers, explanations, notes | Auto, on any prose task | 172 | yes | 3 |
+| write-better | Chat answers, explanations, notes | Auto, on any prose task | 172 | yes | 4 |
 | write-compact | The whole reply stays short | Auto, or "brief mode" | 69 | yes | 3 |
 | write-tldr | Short block at the end of a long answer | Auto, past 30 lines | 59 | yes | 2 |
 | write-again | Rewrite, explain again, refresh a stale doc | Auto, on "again" or "wait what" | 72 | yes | 2 |
 | help-write | In-chat router to the right skill | On request | 71 | yes | 2 |
-| write-docs | Docs for humans and for agents | Auto, on doc tasks | 122 | yes | 3 |
+| write-docs | Docs for humans and for agents | Auto, on doc tasks | 122 | yes | 4 |
 | write-pr | PR title and body with evidence | Auto, on PR text | 119 | yes | 3 |
-| write-commit | Commit message from diff and history | Auto, on commit text | 55 | yes | 3 |
+| write-commit | Commit message from diff and history | Auto, on commit text | 55 | yes | 4 |
 | write-comments | Code comments: intent, constraints, traps | Auto, on comment edits | 60 | yes | 2 |
-| write-review | Review comments: location, problem, fix | Auto, on review requests | 58 | yes | 2 |
+| write-review | Review comments: location, problem, fix | Auto, on review requests | 58 | yes | 3 |
 | write-jira | Jira epics, stories, points (Fibonacci) | Auto, on Jira text | 129 | yes | 3 |
 | write-issue | GitHub issues with repro steps | Auto, on issue text | 67 | yes | 2 |
-| write-release | Release notes from git history | Auto, on release text | 59 | yes | 2 |
+| write-release | Release notes from git history | Auto, on release text | 59 | yes | 3 |
 | write-report | Reports: answer first, evidence after | Auto, on report requests | 81 | yes | 2 |
 | write-summary | Summaries that keep decisions and owners | Auto, on summarize | 59 | yes | 2 |
 | write-handoff | Handoff notes for a fresh session | Auto, on handoff | 86 | yes | 2 |
-| write-plan | Plans before work starts | Auto, on plan requests | 75 | yes | 2 |
+| write-plan | Plans before work starts | Auto, on plan requests | 75 | yes | 3 |
 | write-adr | Architecture decision records (Nygard) | Auto, on ADR requests | 102 | yes | 2 |
 | write-prd | Product requirements with metrics | Auto, on PRD requests | 81 | yes | 2 |
 | write-longform | Staged long-form mission | Explicit request | 98 | yes | 2 |
-| write-glossary | One term per concept | Auto, on glossary work | 58 | yes | 2 |
-| write-ste | Enforce STE, violations named by rule | Auto, on "ste" | 63 | yes | 2 |
+| write-glossary | One term per concept | Auto, on glossary work | 58 | yes | 3 |
+| write-ste | Enforce STE, violations named by rule | Auto, on "ste" | 63 | yes | 3 |
 
 Line counts and the Example column reflect the files at the enforcement update (2026-11-16). Every skill carries an example, in the skill file, in `docs/examples.md`, or in both.
 

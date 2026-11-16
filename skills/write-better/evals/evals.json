@@ -35,6 +35,18 @@
         "Meaning kept"
       ],
       "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Shorten this sentence for a status page without losing any fact or exception: 'Users who have not verified their email address cannot export reports larger than 10000 rows, except for admins, who have no export limit.'",
+      "expected_output": "A shorter sentence, or two, that keeps every fact and the admin exception. When a fix would change the meaning, the skill stops and asks.",
+      "assertions": [
+        "Every fact kept",
+        "The admin exception kept",
+        "Active voice",
+        "Stops and asks rather than losing a fact"
+      ],
+      "files": []
     }
   ]
 }

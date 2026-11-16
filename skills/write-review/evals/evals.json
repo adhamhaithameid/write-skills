@@ -23,6 +23,17 @@
         "No praise line"
       ],
       "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Review this change and write the review comments. The diff adds timeout=30 to every request call across src/api/client.py. You cannot see the callers or the tests. Concern: some endpoints may need longer timeouts.",
+      "expected_output": "Findings in path:line problem. fix. format, with no severity that has no quoted code line behind it, and a not-checked list of every unread path.",
+      "assertions": [
+        "No severity without a quoted code line",
+        "Findings carry location, problem, fix",
+        "Ends with the not-checked list"
+      ],
+      "files": []
     }
   ]
 }

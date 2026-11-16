@@ -23,6 +23,18 @@
         "Asks for missing facts or marks assumptions"
       ],
       "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Write a plan: the team wants faster search. Current p95 is 900 ms at 10000 rows; the target is 200 ms. Options: add a database index, move search to a dedicated engine, cache results.",
+      "expected_output": "A costed plan with a recommended option that ends on the approval question and starts no work.",
+      "assertions": [
+        "Ends on the approval question",
+        "No work started",
+        "Options carry cost, risk, and what they buy",
+        "One option recommended with a reason"
+      ],
+      "files": []
     }
   ]
 }

@@ -41,6 +41,18 @@
         "Subject within the repo's observed length"
       ],
       "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Write a commit message. Diff: adds a retry around the payment webhook call in src/payments/webhook.ts. Branch: feat/webhook-retry. History uses Conventional Commits. The user says: link the tracking ticket. No ticket number exists anywhere in the prompt, the branch, or the diff.",
+      "expected_output": "A paste-ready Conventional Commits message with no invented ticket number, and a named gap: no ticket was provided.",
+      "assertions": [
+        "No invented ticket number",
+        "Subject follows the history style",
+        "One code block",
+        "The missing ticket is named"
+      ],
+      "files": []
     }
   ]
 }

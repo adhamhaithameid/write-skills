@@ -37,6 +37,18 @@
         "No restated rules"
       ],
       "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Write one README section that both walks a newcomer through running the importer step by step and serves as the complete reference for all 14 CLI flags of the importer.",
+      "expected_output": "The two jobs named, then either a split into two parts or a section that keeps the jobs separate. Steps read as commands with gates before actions. Invented names flagged or avoided.",
+      "assertions": [
+        "Both jobs named",
+        "Jobs kept separate",
+        "Steps are commands with gates first",
+        "No invented flag names presented as real"
+      ],
+      "files": []
     }
   ]
 }

@@ -23,6 +23,17 @@
         "Effect on the user named"
       ],
       "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Write release notes for v2.3.0..HEAD. History: 'a1b2c3 fix: handle empty cart', 'd4e5f6 chore: internal cleanup', 'b3c4d5 change sync defaults', '9f8e7d update deps'. The full message of b3c4d5 is only 'change sync defaults'. No linked issues.",
+      "expected_output": "Grouped notes with the noise dropped, and b3c4d5 listed under Changed as unknown with its hash, not a guessed effect.",
+      "assertions": [
+        "Unclear entry listed as unknown with the hash",
+        "No invented effect",
+        "Internal noise dropped"
+      ],
+      "files": []
     }
   ]
 }

@@ -69,4 +69,4 @@ Method: each of the eight skills gained one rule from the thin-pass analysis. Ea
 | write-review | Quote the line behind a severity | Review with no readable files | Pass. Zero severities. Every finding is a question. The not-checked list names every unread path. |
 | write-ste | Name violations by the lint rule names | One sentence with five violation types | Pass. Passive, contraction, progressive, topic, and phrase named. The unknown-actor passive stays, with the reason. |
 
-Score: 8 of 8 pass. These probes carry less weight than the full before-and-after runs: one case each, skilled arm only, no control. They prove the new rules fire. They do not re-measure separation.
+Score: 8 of 8 pass. These probes carry less weight than the full before-and-after runs: one case each, skilled arm only, no control. They prove the new rules fire. They do not re-measure separation. The eight probes now live as eval cases in `skills/<name>/evals/evals.json`, so a rerun covers the new rules.
